@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "action": "mock_swap",
+    "chain_id": 97,
+    "slippage_bps": 500,
+    "target_contract": null,
+    "token": null,
+    "value_wei": "0"
+  },
+  "decision": "block",
+  "reason": "slippage 500 bps exceeds max 100 bps"
+}

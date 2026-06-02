@@ -10,8 +10,8 @@ financial agents. A strategy agent proposes a DeFi action, RiskGuard checks it
 against a declared policy before execution, and the result is emitted as a
 machine-readable Policy Verdict Receipt.
 
-The prototype is deployed on BSC testnet and has two successful receipt
-transactions: one `allow` verdict and one `block` verdict.
+The prototype anchors two demo receipts on BSC testnet: one `allow` verdict and
+one `block` verdict.
 
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
@@ -42,10 +42,10 @@ Agent intent / job
   -> RiskGuard policy check
   -> Policy Verdict Receipt
   -> planned BNBAgent/ERC-8183 evidence metadata
-  -> BSC testnet receipt registry proof today
+  -> BSC testnet receipt registry demo anchoring today
 ```
 
-## BSC testnet proof
+## BSC testnet demo anchoring
 
 Network: BSC testnet, chain id `97`.
 
@@ -57,8 +57,13 @@ Network: BSC testnet, chain id `97`.
 - Block receipt tx:
   `0xb36948eb76e13f02210c163441eeb456133dbb96dfeb7289789a27c5be772cbd`
 - On-chain receipt count: `2`
-- BscScan source verification: pending, non-blocking for the current prototype.
+- BscScan source verification: verified.
   Source: `contracts/PolicyReceiptRegistry.sol`.
+
+This registry is intentionally minimal: it records receipt hashes on BSC
+testnet for hackathon demo evidence. It does not authenticate callers, validate
+receipt preimages, or prove that a receipt came from a production RiskGuard
+deployment.
 
 Explorer links:
 
@@ -87,6 +92,7 @@ Full run details: `docs/testnet-results.md`.
   - `policy_hash`;
   - `simulation_hash`;
   - `evidence_hash`.
+- Persisted evidence and simulation preimages for the demo receipts.
 - Local `StrategyAgent` and `RiskGuardAgent` demo.
 - Manifest-only BNBAgent/ERC-8183 `DeliverableManifest.metadata` payload.
 - Foundry/cast environment output for receipt transactions.
@@ -149,7 +155,11 @@ Expected files:
 
 ```text
 safe-receipt.json
+safe-evidence.json
+safe-simulation.json
 unsafe-receipt.json
+unsafe-evidence.json
+unsafe-simulation.json
 ```
 
 Run the broad local verification suite:
@@ -192,7 +202,8 @@ Example shape:
 ```
 
 The receipt is deterministic: the same policy and proposed action produce the
-same hashes.
+same hashes. The current `simulation_hash` is a policy-only placeholder whose
+preimage says `status: not-run`; no external DeFi simulator is claimed.
 
 ## Repository layout
 
@@ -236,6 +247,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Submission roadmap and team approval: `docs/submission-roadmap.md`
 - Submission package checklist: `docs/submission-package.md`
 - Submission tracker: `docs/submission-tracker.md`
+- Final team review: `docs/final-team-review.md`
 - Deck draft: `docs/deck-draft.md`
 - HTML deck: `docs/deck.html`
 - PDF deck: `docs/deck.pdf`
@@ -259,7 +271,6 @@ Before submission:
 
 After submission:
 
-- BscScan contract verification.
 - Tiny static receipt verifier.
 - Real ERC-8183 job submission if it stays lightweight.
 - opBNB deployment.

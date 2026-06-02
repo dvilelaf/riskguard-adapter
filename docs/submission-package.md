@@ -2,8 +2,8 @@
 
 Date: 2026-06-02
 
-Purpose: keep the BNB Hack submission artifacts, proof links and demo commands
-in one judge-facing checklist.
+Purpose: keep the BNB Hack submission artifacts, on-chain links and demo
+commands in one judge-facing checklist.
 
 ## Project
 
@@ -27,8 +27,8 @@ Short description:
 
 > RiskGuard checks autonomous DeFi actions against a declared policy before
 > execution and emits deterministic allow/block Policy Verdict Receipts designed
-> to be attached to agent job evidence. Today, the proof is anchored on BSC
-> testnet; opBNB is a roadmap target.
+> to be attached to agent job evidence. Today, the demo receipts are anchored on
+> BSC testnet; opBNB is a roadmap target.
 
 ## Primary submission target
 
@@ -38,7 +38,7 @@ Short description:
 - Stretch prize target: 7,000 USDT
 - Planning assumption: solo builder using AI, 6-10 focused hours remaining
 
-## Repository proof
+## Repository evidence
 
 Local commands:
 
@@ -74,7 +74,11 @@ uv run riskguard demo --evidence-dir examples/evidence
 Generated files:
 
 - `examples/evidence/safe-receipt.json`
+- `examples/evidence/safe-evidence.json`
+- `examples/evidence/safe-simulation.json`
 - `examples/evidence/unsafe-receipt.json`
+- `examples/evidence/unsafe-evidence.json`
+- `examples/evidence/unsafe-simulation.json`
 
 Evidence drift check:
 
@@ -82,7 +86,11 @@ Evidence drift check:
 rm -rf /tmp/riskguard-review-evidence
 uv run riskguard demo --evidence-dir /tmp/riskguard-review-evidence
 diff -u examples/evidence/safe-receipt.json /tmp/riskguard-review-evidence/safe-receipt.json
+diff -u examples/evidence/safe-evidence.json /tmp/riskguard-review-evidence/safe-evidence.json
+diff -u examples/evidence/safe-simulation.json /tmp/riskguard-review-evidence/safe-simulation.json
 diff -u examples/evidence/unsafe-receipt.json /tmp/riskguard-review-evidence/unsafe-receipt.json
+diff -u examples/evidence/unsafe-evidence.json /tmp/riskguard-review-evidence/unsafe-evidence.json
+diff -u examples/evidence/unsafe-simulation.json /tmp/riskguard-review-evidence/unsafe-simulation.json
 ```
 
 Manifest-only ERC-8183 evidence payload:
@@ -98,7 +106,7 @@ uv run riskguard manifest \
 This command does not submit or settle a real ERC-8183 job. It builds a local
 `DeliverableManifest` payload with the RiskGuard receipt hash in `metadata`.
 
-## BSC testnet proof
+## BSC testnet demo anchoring
 
 - Chain: BSC testnet
 - Chain id: 97
@@ -111,6 +119,14 @@ This command does not submit or settle a real ERC-8183 job. It builds a local
 - Block receipt tx:
   `0xb36948eb76e13f02210c163441eeb456133dbb96dfeb7289789a27c5be772cbd`
 - On-chain `receiptCount()`: `2`
+
+Scope note:
+
+- the registry records receipt hashes for demo evidence;
+- any caller can write to this minimal registry;
+- source is public in GitHub and verified on BscScan;
+- the `simulation_hash` preimage is `status: not-run`, so no external DeFi
+  simulator is claimed.
 
 Copy-paste verification:
 
@@ -137,7 +153,8 @@ Target length: 90-150 seconds.
 2. Product: RiskGuard emits deterministic allow/block verdict receipts.
 3. Demo: show `default-policy.json`, policy-compliant action and allow receipt.
 4. Demo: show policy-violating action and block receipt.
-5. Proof: show BSC testnet contract, allow tx, block tx and `receiptCount=2`.
+5. On-chain anchoring: show BSC testnet contract, allow tx, block tx and
+   `receiptCount=2`.
 6. Integration: explain BNBAgent/ERC-8183 evidence metadata path.
 7. Close: open-source, tested, deployed on BSC testnet and ready for
    lightweight integration experiments.
@@ -157,17 +174,18 @@ Maximum: 7 slides.
 1. Title: RiskGuard Adapter.
 2. Problem: agents can act faster than users can review.
 3. Solution: policy verdict adapter before execution.
-4. Demo proof: CLI, receipts, tests, BSC testnet txs.
-5. Architecture: agent/job -> RiskGuard -> manifest/proof -> BSC testnet.
+4. Demo evidence: CLI, receipts, tests, BSC testnet txs.
+5. Architecture: agent/job -> RiskGuard -> manifest metadata -> BSC testnet.
 6. Why BNB: DeFAI and autonomous wallets need composable guardrails.
 7. Roadmap: manifest adapter, verifier, opBNB, policy templates.
 
 ## Submission checklist
 
 - GitHub repo is public.
-- README has BSC testnet proof near the top.
+- README has BSC testnet demo anchoring near the top.
 - `docs/testnet-results.md` is current.
-- `examples/evidence/` contains policy-compliant and policy-violating receipts.
+- `examples/evidence/` contains policy-compliant and policy-violating receipts,
+  evidence preimages and simulation preimages.
 - Demo video URL is ready.
 - Deck URL is ready.
 - Tweet draft is ready; tweet URL is external pending after posting.

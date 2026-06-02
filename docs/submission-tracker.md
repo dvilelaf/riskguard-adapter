@@ -8,7 +8,8 @@ Release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
 ## Status summary
 
-Status: **submission package complete; final tweet/form account actions remain**.
+Status: **submission package mostly complete; final tweet/form account actions
+remain; BscScan source verification is complete**.
 
 Completed locally:
 
@@ -17,8 +18,9 @@ Completed locally:
 - MIT license added;
 - public GitHub Actions CI workflow added;
 - README judge-ready;
-- BSC testnet proof documented;
-- safe/policy-compliant and policy-violating evidence receipts generated;
+- BSC testnet demo anchoring documented;
+- safe/policy-compliant and policy-violating receipts generated;
+- receipt evidence and simulation preimages generated;
 - manifest-only ERC-8183 payload implemented;
 - deck draft written;
 - HTML deck written;
@@ -34,7 +36,8 @@ Completed locally:
 - submission copy written;
 - BNB Hack form package written;
 - CI and e2e checks passed;
-- team review completed.
+- team review completed with conditional approval, documented in
+  `docs/final-team-review.md`.
 
 External remaining:
 
@@ -44,14 +47,14 @@ External remaining:
 Optional polish:
 
 - replace fallback silent demo video with narrated upload;
-- verify contract source on BscScan after obtaining API key.
+- BscScan source verification completed.
 
 ## Milestone tracker
 
 | Milestone | Deliverables | Status | Acceptance evidence |
 |---|---|---|---|
-| 1. Submission narrative | `README.md` | Complete | README starts with pitch, proof links and non-claims. |
-| 2. Evidence package | `examples/evidence/safe-receipt.json`, `examples/evidence/unsafe-receipt.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
+| 1. Submission narrative | `README.md` | Complete | README starts with pitch, demo anchoring links and non-claims. |
+| 2. Evidence package | `examples/evidence/*-receipt.json`, `examples/evidence/*-evidence.json`, `examples/evidence/*-simulation.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
 | 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Fallback complete | Silent fallback video exists. Narrated recording remains recommended. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
@@ -104,7 +107,11 @@ git diff --check
 rm -rf /tmp/riskguard-review-evidence
 uv run riskguard demo --evidence-dir /tmp/riskguard-review-evidence
 diff -u examples/evidence/safe-receipt.json /tmp/riskguard-review-evidence/safe-receipt.json
+diff -u examples/evidence/safe-evidence.json /tmp/riskguard-review-evidence/safe-evidence.json
+diff -u examples/evidence/safe-simulation.json /tmp/riskguard-review-evidence/safe-simulation.json
 diff -u examples/evidence/unsafe-receipt.json /tmp/riskguard-review-evidence/unsafe-receipt.json
+diff -u examples/evidence/unsafe-evidence.json /tmp/riskguard-review-evidence/unsafe-evidence.json
+diff -u examples/evidence/unsafe-simulation.json /tmp/riskguard-review-evidence/unsafe-simulation.json
 POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just receipt-count
 git status --ignored --short .env.bsc-testnet-wallet
 git ls-files --error-unmatch .env.bsc-testnet-wallet && exit 1 || true
@@ -118,7 +125,7 @@ Expected:
 - both evidence diffs are empty;
 - `receiptCount()` returns `2`;
 - `.env.bsc-testnet-wallet` is ignored and not tracked;
-- private-key scan returns no matches.
+- private-key scan returns no matches in public project files.
 
 ## External blockers
 
@@ -177,10 +184,16 @@ Source material:
 
 ### BscScan source verification
 
-Reason: current shell has no `BSCSCAN_API_KEY` or `ETHERSCAN_API_KEY`.
+Status: complete.
 
-Status:
+Evidence:
 
-- attempted Sourcify verification;
-- Foundry could not generate standard JSON input without additional config;
-- not blocking because source is public in GitHub and tx proof exists.
+- `just verify-bscscan` submitted the verification through Foundry;
+- BscScan returned `Pass - Verified`;
+- the contract page now exposes verified source and ABI.
+
+Repeat command:
+
+```bash
+just verify-bscscan
+```

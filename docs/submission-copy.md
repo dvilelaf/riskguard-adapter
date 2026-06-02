@@ -29,7 +29,7 @@ A strategy agent proposes a DeFi action. RiskGuard evaluates the action against
 a declared policy: chain id, value, action, target contract, token and slippage.
 It then emits a deterministic Policy Verdict Receipt with an `allow` or `block`
 decision, a concrete reason, and stable hashes for the proposal, policy,
-simulation and evidence.
+policy-only simulation placeholder and evidence.
 
 The current prototype is intentionally narrow. It does not custody funds,
 execute trades, claim production safety or replace BNBAgent/ERC-8004/ERC-8183.
@@ -37,10 +37,11 @@ It demonstrates how a RiskGuard receipt can be generated locally, carried in
 ERC-8183 `DeliverableManifest.metadata`, and anchored through a minimal BSC
 testnet receipt registry.
 
-## Implemented proof
+## Implemented evidence
 
 - `riskguard validate` for single plan evaluation.
 - `riskguard demo` for policy-compliant and policy-violating local agent flows.
+- Persisted receipt, evidence and simulation preimage JSON for both demo flows.
 - `riskguard foundry-env` for contract-ready receipt hash exports.
 - `riskguard manifest` for manifest-only ERC-8183 evidence payloads.
 - Solidity `PolicyReceiptRegistry`.
@@ -68,6 +69,10 @@ workflows. The demo shows a policy-compliant DeFi action receiving an `allow`
 receipt, a policy-violating action receiving a `block` receipt, two BSC testnet receipt
 transactions, and a manifest-only ERC-8183 evidence payload carrying the
 RiskGuard receipt hash.
+
+Scope note: the BSC testnet registry is a minimal demo anchoring contract. It
+does not authenticate writers or prove production RiskGuard execution. The
+source is public in GitHub and verified on BscScan.
 
 ## Tweet draft
 
@@ -102,4 +107,4 @@ Demo: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/ris
 - Contract address:
   `0x10932358609f911B5cA1a131298C91a327ACAdC1`
 - Track: Main track / AI-agent infrastructure angle
-- Source verification status: pending, source available in repo
+- Source verification status: verified on BscScan, source available in repo

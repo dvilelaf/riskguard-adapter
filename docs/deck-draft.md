@@ -8,7 +8,7 @@ Length: 7 slides maximum.
 
 Pre-execution policy verdicts for BNB Chain agents.
 
-Proof:
+Evidence:
 
 - open source;
 - BSC testnet deployed;
@@ -65,7 +65,7 @@ Speaker note:
 > protocol. It is the policy-verdict layer that can be called by an agent,
 > wallet workflow or job system.
 
-## Slide 4: Demo proof
+## Slide 4: Demo evidence
 
 Implemented today:
 
@@ -96,7 +96,7 @@ Agent intent / job
   -> RiskGuard policy check
   -> Policy Verdict Receipt
   -> ERC-8183 manifest metadata
-  -> BSC testnet receipt proof
+  -> BSC testnet receipt anchoring
 ```
 
 Important boundary:
@@ -119,7 +119,7 @@ RiskGuard fits because it gives builders:
 
 - a reusable guardrail before autonomous DeFi actions;
 - deterministic evidence for allow/block decisions;
-- BSC testnet proof;
+- BSC testnet anchoring;
 - a small integration surface for agents and wallets;
 - an open-source base for future BNBAgent/ERC-8183 work.
 
@@ -132,8 +132,8 @@ Speaker note:
 
 Next:
 
-- BscScan source verification if quick;
 - public demo video;
+- BscScan source verified;
 - real ERC-8183 job submission if lightweight;
 - tiny receipt verifier;
 - opBNB deployment;
@@ -146,5 +146,5 @@ Prize ask:
 
 Speaker note:
 
-> The submission is deliberately scoped: deployed proof, deterministic receipts
-> and a clear path to deeper agent integration.
+> The submission is deliberately scoped: deployed demo anchoring, deterministic
+> receipts and a clear path to deeper agent integration.

@@ -1,0 +1,8 @@
+[profile.default]
+src = "contracts"
+test = "contracts"
+out = "/tmp/riskguard-forge-out"
+cache_path = "/tmp/riskguard-forge-cache"
+solc_version = "0.8.34"
+evm_version = "prague"
+optimizer = false

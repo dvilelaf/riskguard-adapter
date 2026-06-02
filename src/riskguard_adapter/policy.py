@@ -17,6 +17,10 @@ def load_json(path: Path | str) -> JsonObject:
 
 
 def evaluate_plan(policy: JsonObject, plan: JsonObject) -> JsonObject:
+    return build_receipt_artifacts(policy, plan)["receipt"]
+
+
+def build_receipt_artifacts(policy: JsonObject, plan: JsonObject) -> JsonObject:
     decision, reason = _decision(policy, plan)
     evidence = {
         "checks": {
@@ -36,17 +40,25 @@ def evaluate_plan(policy: JsonObject, plan: JsonObject) -> JsonObject:
         "summary": "No external DeFi simulation was run in this spike.",
     }
 
+    evidence_hash = hash_json(evidence)
+    simulation_hash = hash_json(simulation)
     receipt = {
         "agent_id": str(plan.get("agent_id", "unknown-agent")),
         "decision": decision,
-        "evidence_hash": hash_json(evidence),
+        "evidence_hash": evidence_hash,
         "policy_hash": hash_json(policy),
         "policy_id": str(policy.get("policy_id", "unknown-policy")),
         "proposal_hash": hash_json(plan),
         "reason": reason,
-        "simulation_hash": hash_json(simulation),
+        "simulation_hash": simulation_hash,
     }
-    return receipt
+    return {
+        "evidence": evidence,
+        "evidence_hash": evidence_hash,
+        "receipt": receipt,
+        "simulation": simulation,
+        "simulation_hash": simulation_hash,
+    }
 
 
 def hash_json(value: JsonObject) -> str:

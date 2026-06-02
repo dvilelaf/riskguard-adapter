@@ -50,5 +50,11 @@ def test_write_demo_evidence_creates_receipt_files(tmp_path) -> None:
 
     assert (tmp_path / "safe-receipt.json").exists()
     assert (tmp_path / "unsafe-receipt.json").exists()
+    assert (tmp_path / "safe-evidence.json").exists()
+    assert (tmp_path / "unsafe-evidence.json").exists()
+    assert (tmp_path / "safe-simulation.json").exists()
+    assert (tmp_path / "unsafe-simulation.json").exists()
     assert load_json(tmp_path / "safe-receipt.json")["decision"] == "allow"
     assert load_json(tmp_path / "unsafe-receipt.json")["decision"] == "block"
+    assert load_json(tmp_path / "safe-evidence.json")["decision"] == "allow"
+    assert load_json(tmp_path / "unsafe-simulation.json")["status"] == "not-run"

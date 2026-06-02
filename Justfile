@@ -1,6 +1,8 @@
 set shell := ["bash", "-uc"]
+set dotenv-load := true
 
 bnb_rpc := env_var_or_default("BNB_TESTNET_RPC_URL", "https://data-seed-prebsc-1-s1.bnbchain.org:8545")
+registry := env_var_or_default("POLICY_RECEIPT_REGISTRY_ADDRESS", "0x10932358609f911B5cA1a131298C91a327ACAdC1")
 
 # Install dependencies
 install:
@@ -87,6 +89,18 @@ record-block:
 receipt-count:
     : "${POLICY_RECEIPT_REGISTRY_ADDRESS:?Set POLICY_RECEIPT_REGISTRY_ADDRESS}"
     cast call "$POLICY_RECEIPT_REGISTRY_ADDRESS" "receiptCount()(uint256)" --rpc-url "{{bnb_rpc}}"
+
+# Verify the deployed registry source on BscScan testnet
+verify-bscscan:
+    : "${ETHERSCAN_API_KEY:?Set ETHERSCAN_API_KEY}"
+    forge verify-contract \
+      "{{registry}}" \
+      contracts/PolicyReceiptRegistry.sol:PolicyReceiptRegistry \
+      --chain 97 \
+      --compiler-version 0.8.34 \
+      --evm-version prague \
+      --verifier etherscan \
+      --watch
 
 # Format code
 format:

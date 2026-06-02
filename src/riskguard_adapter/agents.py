@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from riskguard_adapter.policy import evaluate_plan, load_json
+from riskguard_adapter.policy import build_receipt_artifacts, evaluate_plan, load_json
 
 JsonObject = dict[str, Any]
 
@@ -42,11 +42,13 @@ def run_demo(
             {
                 "label": "safe",
                 "plan": safe_plan,
+                "artifacts": build_receipt_artifacts(policy, safe_plan),
                 "receipt": guard_agent.evaluate(safe_plan),
             },
             {
                 "label": "unsafe",
                 "plan": unsafe_plan,
+                "artifacts": build_receipt_artifacts(policy, unsafe_plan),
                 "receipt": guard_agent.evaluate(unsafe_plan),
             },
         ]
@@ -58,8 +60,15 @@ def write_demo_evidence(result: JsonObject, directory: Path | str) -> None:
     evidence_dir.mkdir(parents=True, exist_ok=True)
 
     for run in result["runs"]:
-        path = evidence_dir / f"{run['label']}-receipt.json"
-        path.write_text(
-            json.dumps(run["receipt"], indent=2, sort_keys=True) + "\n",
-            encoding="utf-8",
-        )
+        artifacts = run["artifacts"]
+        files = {
+            "evidence": artifacts["evidence"],
+            "receipt": run["receipt"],
+            "simulation": artifacts["simulation"],
+        }
+        for suffix, payload in files.items():
+            path = evidence_dir / f"{run['label']}-{suffix}.json"
+            path.write_text(
+                json.dumps(payload, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )

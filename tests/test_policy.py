@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from riskguard_adapter.policy import evaluate_plan, load_json
+from riskguard_adapter.policy import build_receipt_artifacts, evaluate_plan, load_json
 
 ROOT = Path(__file__).resolve().parents[1]
 POLICY_PATH = ROOT / "examples" / "policies" / "default-policy.json"
@@ -55,3 +55,16 @@ def test_receipt_hashes_are_deterministic() -> None:
     second = evaluate_plan(json.loads(json.dumps(policy)), json.loads(json.dumps(plan)))
 
     assert first == second
+
+
+def test_receipt_artifacts_expose_hash_preimages() -> None:
+    policy = load_json(POLICY_PATH)
+    plan = load_json(SAFE_PLAN_PATH)
+
+    artifacts = build_receipt_artifacts(policy, plan)
+    receipt = artifacts["receipt"]
+
+    assert receipt["evidence_hash"] == artifacts["evidence_hash"]
+    assert receipt["simulation_hash"] == artifacts["simulation_hash"]
+    assert artifacts["evidence"]["decision"] == "allow"
+    assert artifacts["simulation"]["status"] == "not-run"

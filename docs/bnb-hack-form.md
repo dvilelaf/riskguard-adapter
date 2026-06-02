@@ -92,7 +92,7 @@ A strategy agent proposes a DeFi action. RiskGuard evaluates the action against
 a declared policy: chain id, value, action, target contract, token and slippage.
 It then emits a deterministic Policy Verdict Receipt with an `allow` or `block`
 decision, a concrete reason, and stable hashes for the proposal, policy,
-simulation and evidence.
+policy-only simulation placeholder and evidence.
 
 The current prototype is intentionally narrow. It does not custody funds,
 execute trades, claim production safety or replace BNBAgent/ERC-8004/ERC-8183.
@@ -100,7 +100,7 @@ It demonstrates how a RiskGuard receipt can be generated locally, carried in
 ERC-8183 `DeliverableManifest.metadata`, and anchored through a minimal BSC
 testnet receipt registry.
 
-## BSC testnet proof
+## BSC testnet demo anchoring
 
 - Chain: BSC testnet
 - Chain id: 97
@@ -113,6 +113,7 @@ testnet receipt registry.
 - Block receipt tx:
   `0xb36948eb76e13f02210c163441eeb456133dbb96dfeb7289789a27c5be772cbd`
 - Receipt count: `2`
+- BscScan source verification: verified
 
 Explorer links:
 
@@ -132,7 +133,8 @@ Explorer links:
 - `riskguard foundry-env` exports contract-ready receipt hashes.
 - `riskguard manifest` builds a manifest-only ERC-8183 evidence payload.
 - `PolicyReceiptRegistry` records receipt hashes on BSC testnet.
-- Evidence bundle includes allow and block receipts.
+- Evidence bundle includes allow/block receipts plus evidence and simulation
+  preimages.
 - CI verifies Python, Solidity and local EVM e2e.
 
 ## Commands

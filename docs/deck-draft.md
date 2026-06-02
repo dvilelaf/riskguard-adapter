@@ -134,15 +134,15 @@ Next:
 
 - public demo video;
 - BscScan source verified;
-- real ERC-8183 job submission if lightweight;
-- tiny receipt verifier;
+- real ERC-8183 job submission;
+- public receipt verifier;
 - opBNB deployment;
 - policy templates for DeFAI and treasury workflows.
 
-Prize ask:
+Submission target:
 
-- realistic target: 3,000 USDT;
-- stretch target: 7,000 USDT if judges value the agent-infra angle.
+- primary fit: AI-agent infrastructure / DeFAI safety;
+- judging angle: small, verifiable guardrail with live BSC testnet evidence.
 
 Speaker note:
 

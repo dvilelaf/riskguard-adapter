@@ -1,6 +1,6 @@
 # BNB Hack form answers
 
-Use this as the copy/paste sheet when BNB confirms the current main-track
+Use this as the answer sheet when BNB confirms the current main-track
 submission route.
 
 Main-track form listed by the official page:
@@ -28,7 +28,7 @@ RiskGuard Adapter
 Team:
 
 ```text
-Solo builder using AI assistance.
+Solo builder.
 ```
 
 Contact email:
@@ -78,7 +78,7 @@ A strategy agent proposes a DeFi action. RiskGuard evaluates the action against
 a declared policy: chain id, value, action, target contract, token and slippage.
 It then emits a deterministic Policy Verdict Receipt with an allow or block
 decision, a concrete reason, and stable hashes for the proposal, policy,
-policy-only simulation placeholder and evidence.
+non-executing demo simulation record and evidence.
 
 The current prototype is intentionally narrow. It does not custody funds,
 execute trades, claim production safety or replace BNBAgent/ERC-8004/ERC-8183.
@@ -113,7 +113,7 @@ Deck PDF:
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 ```
 
-Demo video fallback:
+Demo video:
 
 ```text
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4

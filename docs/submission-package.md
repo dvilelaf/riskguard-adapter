@@ -204,7 +204,7 @@ Maximum: 7 slides.
 
 ## Open before submit
 
-- Optional: replace fallback silent demo video with narrated upload.
+- Optional: replace silent demo video with narrated upload.
 - Post tweet from the user account.
 - Ask BNB Hack support for the current main-track submission route.
 - Submit once BNB confirms the current route.
@@ -216,7 +216,7 @@ Draft assets:
 - PDF deck: `docs/deck.pdf`
 - Video recording plan: `docs/video-recording-plan.md`
 - Demo transcript: `docs/demo-transcript.md`
-- Fallback demo video:
+- Demo video:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Submission copy: `docs/submission-copy.md`
 - BNB Hack form package: `docs/bnb-hack-form.md`

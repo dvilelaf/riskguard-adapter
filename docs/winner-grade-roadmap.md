@@ -2,7 +2,7 @@
 
 Date: 2026-06-02
 
-Goal: turn RiskGuard from a credible AI-assisted hackathon MVP into a
+Goal: turn RiskGuard from a credible solo-built hackathon MVP into a
 judge-legible, money-oriented submission with one or two visible technical depth
 upgrades.
 
@@ -27,9 +27,9 @@ technical depth.
 | Milestone | Timebox | Deliverables | Done when |
 |---|---:|---|---|
 | 0. Submission route | 30 min | Message to BNB support, response tracked | We have a current submit route or a documented external blocker. |
-| 1. Receipt provenance | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | In progress: a judge can see who signed the local receipt and verify that hashes/preimages match. |
-| 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | In progress: browser verifies demo receipt hashes, signed payload and signature fields without local setup. |
-| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | Public repo feels builder-led, not like an LLM operations dump. |
+| 1. Receipt provenance | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | Done: CLI verifies signed receipts and hash preimages. |
+| 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Done locally: browser verifies demo receipt hashes, signed payload and signature fields without local setup. |
+| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | In progress: public copy now emphasizes product evidence and removes most backstage phrasing. |
 | 4. Demo media | 2-3 h | Narrated 90-120s video, refreshed release asset/link | Video shows signed receipt verification, BscScan source, receipt count and manifest metadata. |
 | 5. Final review and release | 1-2 h | `docs/winner-grade-review.md`, CI/e2e proof, release bundle refresh | Team review gives GO or clear NO-GO; all public links are current. |
 
@@ -119,11 +119,20 @@ Changes:
 
 - make `docs/index.html` product-first, not "submission package";
 - trim README docs list to core docs only;
-- remove local `/media/david/...` reference from README;
+- keep local workspace paths out of public-facing docs;
 - move internal strategy docs under an internal section or omit them from
   README;
 - remove unresolved placeholders from public-facing docs;
-- add a short honest line: "solo, AI-assisted, manually verified".
+- keep public framing as "solo builder, manually verified" unless a form
+  explicitly asks about AI assistance.
+
+Current status:
+
+- README and landing page now lead with the product claim and direct artifact
+  links;
+- submission copy uses "solo builder", "demo video", and "non-executing demo
+  simulation record" instead of backstage phrasing;
+- BNB form-status logistics are no longer a primary landing-card action.
 
 ## Hito 4: Demo Media
 

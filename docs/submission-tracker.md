@@ -27,12 +27,14 @@ Completed locally:
 - PDF deck generated;
 - video recording plan written;
 - demo transcript written;
-- fallback silent demo video render script written;
-- fallback silent demo video uploaded as release asset;
+- silent demo video render script written;
+- demo video uploaded as release asset;
 - submission bundle uploaded as release asset;
 - GitHub Pages enabled and serving the public submission page.
+- signed receipt verification implemented.
+- public receipt verifier added.
 - official BNB Hack submit form identified.
-- BNB Hack form answer sheet written for browser copy/paste.
+- BNB Hack form answer sheet written.
 - submission copy written;
 - BNB Hack form package written;
 - CI and e2e checks passed;
@@ -47,7 +49,7 @@ External remaining:
 
 Optional polish:
 
-- replace fallback silent demo video with narrated upload;
+- replace silent demo video with narrated upload;
 - BscScan source verification completed.
 
 ## Milestone tracker
@@ -57,7 +59,7 @@ Optional polish:
 | 1. Submission narrative | `README.md` | Complete | README starts with pitch, demo anchoring links and non-claims. |
 | 2. Evidence package | `examples/evidence/*-receipt.json`, `examples/evidence/*-evidence.json`, `examples/evidence/*-simulation.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
-| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Fallback complete | Silent fallback video exists. Narrated recording remains recommended. |
+| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Complete, upgrade recommended | Silent demo video exists. Narrated recording remains recommended. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack route | Blocked externally | Main-track form listed by BNB is closed to new responses. |
 
@@ -79,6 +81,8 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 - GitHub Pages:
   https://dvilelaf.github.io/riskguard-adapter/
+- Receipt verifier:
+  https://dvilelaf.github.io/riskguard-adapter/verifier.html
 - Main-track form listed by official BNB Hack page:
   https://forms.gle/6jDbA1xrbtxHu2W87
 - Form status page:
@@ -93,7 +97,7 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 - Submission bundle:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-submission-bundle.zip
-- Video fallback:
+- Demo video:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Tweet:
   external pending after posting
@@ -115,6 +119,8 @@ diff -u examples/evidence/safe-simulation.json /tmp/riskguard-review-evidence/sa
 diff -u examples/evidence/unsafe-receipt.json /tmp/riskguard-review-evidence/unsafe-receipt.json
 diff -u examples/evidence/unsafe-evidence.json /tmp/riskguard-review-evidence/unsafe-evidence.json
 diff -u examples/evidence/unsafe-simulation.json /tmp/riskguard-review-evidence/unsafe-simulation.json
+uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json
+uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json
 POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just receipt-count
 git status --ignored --short .env.bsc-testnet-wallet
 git ls-files --error-unmatch .env.bsc-testnet-wallet && exit 1 || true
@@ -146,7 +152,7 @@ GitHub issues:
 ### Optional narrated demo video
 
 Reason: recommended for stronger judging, but no longer blocks a minimal
-submission because a fallback MP4 release asset exists.
+submission because an MP4 release asset exists.
 
 Input needed:
 
@@ -158,7 +164,7 @@ Source material:
 - `docs/video-recording-plan.md`
 - `docs/demo-transcript.md`
 
-Fallback asset:
+Current asset:
 
 - https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 

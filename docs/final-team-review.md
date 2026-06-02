@@ -18,7 +18,7 @@ Decision: **GO for BNB Hack submission only with explicit caveats**.
 
 Allowed submission framing:
 
-- solo builder using AI assistance;
+- solo builder;
 - open-source prototype;
 - deterministic policy verdict receipts;
 - manifest-only ERC-8183 evidence payload;
@@ -83,7 +83,7 @@ Status: fixed. `riskguard demo` now writes:
 
 ### Medium: simulation hash could be misread as external simulation
 
-The demo uses a policy-only simulation placeholder with `status: not-run`.
+The demo uses a non-executing simulation record with `status: not-run`.
 
 Status: accepted. README and submission docs now state that no external DeFi
 simulator is claimed.

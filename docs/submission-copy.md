@@ -1,7 +1,7 @@
 # Submission copy
 
-Use this as the source text for the BNB Hack form, GitHub description, tweet
-and video description.
+Source text for the BNB Hack form, GitHub description, tweet and video
+description.
 
 ## Project title
 
@@ -29,7 +29,7 @@ A strategy agent proposes a DeFi action. RiskGuard evaluates the action against
 a declared policy: chain id, value, action, target contract, token and slippage.
 It then emits a deterministic Policy Verdict Receipt with an `allow` or `block`
 decision, a concrete reason, and stable hashes for the proposal, policy,
-policy-only simulation placeholder and evidence.
+non-executing demo simulation record and evidence.
 
 The current prototype is intentionally narrow. It does not custody funds,
 execute trades, claim production safety or replace BNBAgent/ERC-8004/ERC-8183.

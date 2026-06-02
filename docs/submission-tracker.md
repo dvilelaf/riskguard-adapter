@@ -19,6 +19,7 @@ Completed locally:
 - HTML deck written;
 - PDF deck generated;
 - video recording plan written;
+- demo transcript written;
 - submission copy written;
 - CI and e2e checks passed;
 - team review completed.
@@ -39,7 +40,7 @@ External remaining:
 | 1. Submission narrative | `README.md` | Complete | README starts with pitch, proof links and non-claims. |
 | 2. Evidence package | `examples/evidence/safe-receipt.json`, `examples/evidence/unsafe-receipt.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
-| 4. Demo video plan | `docs/video-recording-plan.md` | Ready to record | Commands and script are written. Video URL external. |
+| 4. Demo video plan | `docs/video-recording-plan.md`, `docs/demo-transcript.md` | Ready to record | Commands, script and caption-style transcript are written. Video URL external. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack form | Partially complete | GitHub URL exists. Video, tweet and form are external. |
 
@@ -99,6 +100,7 @@ Input needed:
 Source material:
 
 - `docs/video-recording-plan.md`
+- `docs/demo-transcript.md`
 
 ### Tweet
 

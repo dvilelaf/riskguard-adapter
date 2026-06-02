@@ -226,6 +226,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - HTML deck: `docs/deck.html`
 - PDF deck: `docs/deck.pdf`
 - Video recording plan: `docs/video-recording-plan.md`
+- Demo transcript: `docs/demo-transcript.md`
 - Submission copy: `docs/submission-copy.md`
 - Integration path: `docs/integration-path.md`
 - Demo script: `docs/demo-script.md`

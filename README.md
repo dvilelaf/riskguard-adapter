@@ -12,6 +12,9 @@ transactions: one `allow` verdict and one `block` verdict.
 
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
+Fallback demo video:
+https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
+
 ## 30-second pitch
 
 BNBAgent and ERC-8004/8183 give agents identity, job rails, escrow and evidence
@@ -227,9 +230,11 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Deck draft: `docs/deck-draft.md`
 - HTML deck: `docs/deck.html`
 - PDF deck: `docs/deck.pdf`
+- Fallback demo video render script: `scripts/render-demo-video.sh`
 - Video recording plan: `docs/video-recording-plan.md`
 - Demo transcript: `docs/demo-transcript.md`
 - Submission copy: `docs/submission-copy.md`
+- BNB Hack form package: `docs/bnb-hack-form.md`
 - Integration path: `docs/integration-path.md`
 - Demo script: `docs/demo-script.md`
 - BNB testnet results: `docs/testnet-results.md`

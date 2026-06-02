@@ -164,7 +164,7 @@ Maximum: 7 slides.
 - `examples/evidence/` contains policy-compliant and policy-violating receipts.
 - Demo video URL is ready.
 - Deck URL is ready.
-- Tweet URL is ready.
+- Tweet draft is ready; tweet URL is external pending after posting.
 - Final `just full-ci` passes.
 - `git diff --check` passes.
 - `git status --ignored --short .env.bsc-testnet-wallet` prints
@@ -176,9 +176,9 @@ Maximum: 7 slides.
 
 ## Open before submit
 
-- Record or upload demo video.
-- Create deck.
-- Publish repo and submit.
+- Optional: replace fallback silent demo video with narrated upload.
+- Post tweet from the user account.
+- Submit BNB Hack form.
 
 Draft assets:
 
@@ -187,5 +187,8 @@ Draft assets:
 - PDF deck: `docs/deck.pdf`
 - Video recording plan: `docs/video-recording-plan.md`
 - Demo transcript: `docs/demo-transcript.md`
+- Fallback demo video:
+  https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Submission copy: `docs/submission-copy.md`
+- BNB Hack form package: `docs/bnb-hack-form.md`
 - Submission tracker: `docs/submission-tracker.md`

@@ -9,6 +9,8 @@ in one judge-facing checklist.
 
 Name: RiskGuard Adapter
 
+Public repo: https://github.com/dvilelaf/riskguard-adapter
+
 One-liner:
 
 > DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.
@@ -179,5 +181,7 @@ Maximum: 7 slides.
 Draft assets:
 
 - Deck draft: `docs/deck-draft.md`
+- HTML deck: `docs/deck.html`
 - Video recording plan: `docs/video-recording-plan.md`
 - Submission copy: `docs/submission-copy.md`
+- Submission tracker: `docs/submission-tracker.md`

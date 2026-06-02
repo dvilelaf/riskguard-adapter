@@ -221,7 +221,9 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Spike roadmap: `docs/spike-roadmap.md`
 - Submission roadmap and team approval: `docs/submission-roadmap.md`
 - Submission package checklist: `docs/submission-package.md`
+- Submission tracker: `docs/submission-tracker.md`
 - Deck draft: `docs/deck-draft.md`
+- HTML deck: `docs/deck.html`
 - Video recording plan: `docs/video-recording-plan.md`
 - Submission copy: `docs/submission-copy.md`
 - Integration path: `docs/integration-path.md`

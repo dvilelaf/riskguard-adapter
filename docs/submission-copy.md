@@ -81,17 +81,18 @@ DeFi policy verdict receipts for BNB Chain agents.
 - 2 receipt txs
 - open source + tested
 
-GitHub: <repo-url>
-Demo: <video-url>
+GitHub: https://github.com/dvilelaf/riskguard-adapter
+Demo: external pending after recording
 
 @BNBChain #BNBHack
 
 ## Submission form checklist
 
-- GitHub URL: `<repo-url>`
-- Demo video URL: `<video-url>`
-- Deck URL: `<deck-url>`
-- Tweet URL: `<tweet-url>`
+- GitHub URL: `https://github.com/dvilelaf/riskguard-adapter`
+- Demo video URL: external pending after recording
+- Deck URL:
+  `https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.html`
+- Tweet URL: external pending after posting
 - Contract address:
   `0x10932358609f911B5cA1a131298C91a327ACAdC1`
 - Track: Main track / AI-agent infrastructure angle

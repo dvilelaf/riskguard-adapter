@@ -25,6 +25,8 @@ Completed locally:
 - demo transcript written;
 - fallback silent demo video render script written;
 - fallback silent demo video uploaded as release asset;
+- submission bundle uploaded as release asset;
+- GitHub Pages enabled with public submission page;
 - submission copy written;
 - BNB Hack form package written;
 - CI and e2e checks passed;
@@ -57,6 +59,8 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter
 - Release:
   https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
+- GitHub Pages:
+  https://dvilelaf.github.io/riskguard-adapter/
 - Deck Markdown:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck-draft.md
 - Deck HTML:
@@ -65,6 +69,8 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf
 - Deck PDF release asset:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
+- Submission bundle:
+  https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-submission-bundle.zip
 - Video fallback:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Tweet:

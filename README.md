@@ -12,6 +12,8 @@ transactions: one `allow` verdict and one `block` verdict.
 
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
+Submission page: https://dvilelaf.github.io/riskguard-adapter/
+
 Fallback demo video:
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 

@@ -11,10 +11,10 @@ route or a sponsor route with high fit.
 
 ## Current Verdict
 
-RiskGuard is real but thin. It has verified BSC testnet proof, CI, receipts,
-manifest metadata and release assets. The risk is that judges see too much
-AI-generated submission machinery and too little human product judgment or
-technical depth.
+RiskGuard is real but thin. It has verified BSC testnet anchoring, CI,
+receipts, manifest metadata and release assets. The risk is that judges see too
+much process scaffolding and too little human product judgment or technical
+depth.
 
 ## Target Routes
 

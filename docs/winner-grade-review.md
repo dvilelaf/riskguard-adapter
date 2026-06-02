@@ -2,7 +2,7 @@
 
 Date: 2026-06-02
 
-Commit reviewed: `dbec23d`
+Commit reviewed: `ef6fec1`
 
 ## Decision
 
@@ -69,8 +69,8 @@ Result:
 
 Public checks:
 
-- GitHub CI succeeded for `dbec23d`.
-- GitHub Pages deploy succeeded for `dbec23d`.
+- GitHub CI succeeded for `ef6fec1`.
+- GitHub Pages deploy succeeded for `ef6fec1`.
 - Published landing page contains the primary CTA row and BSC Testnet
   Anchoring section.
 - Published hash checker contains the CLI EVM recovery caveat.

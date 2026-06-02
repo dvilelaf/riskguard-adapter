@@ -16,14 +16,15 @@ Solo builder using AI assistance.
 
 Main track / AI-agent infrastructure angle.
 
-## Official submit form
+## Main-track form status
 
 https://forms.gle/6jDbA1xrbtxHu2W87
 
 Source: official BNB Hack page `Submit Project` button.
 
-Note: the Google Form requires login before fields are visible from this shell
-environment.
+Status: closed to new responses in the browser as of 2026-06-02. Use
+`docs/bnb-main-form-status.md` and ask the BNB Hack support group for the
+current main-track submission route before attempting final submission.
 
 ## Repository
 

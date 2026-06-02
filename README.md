@@ -19,7 +19,8 @@ Submission page: https://dvilelaf.github.io/riskguard-adapter/
 
 License: MIT
 
-Official BNB Hack submit form: https://forms.gle/6jDbA1xrbtxHu2W87
+BNB Hack main-track form status:
+https://dvilelaf.github.io/riskguard-adapter/bnb-main-form-status.html
 
 Fallback demo video:
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
@@ -257,6 +258,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Submission copy: `docs/submission-copy.md`
 - BNB Hack form package: `docs/bnb-hack-form.md`
 - BNB Hack form answer sheet: `docs/bnb-hack-form-answers.md`
+- BNB Hack main form status: `docs/bnb-main-form-status.md`
 - Integration path: `docs/integration-path.md`
 - Demo script: `docs/demo-script.md`
 - BNB testnet results: `docs/testnet-results.md`
@@ -267,7 +269,9 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 Before submission:
 
 1. Post the required tweet from the user's account.
-2. Submit the BNB Hack form from an authenticated browser session.
+2. Ask BNB Hack support for the current main-track submission route because the
+   official Google Form is currently closed.
+3. Submit through the current route once BNB confirms it.
 
 After submission:
 

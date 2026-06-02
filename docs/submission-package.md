@@ -13,7 +13,11 @@ Public repo: https://github.com/dvilelaf/riskguard-adapter
 
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
-Official submit form: https://forms.gle/6jDbA1xrbtxHu2W87
+Official main-track form listed by BNB:
+https://forms.gle/6jDbA1xrbtxHu2W87
+
+Current status: closed to new responses as of 2026-06-02. See
+`docs/bnb-main-form-status.md`.
 
 License: MIT
 
@@ -202,7 +206,8 @@ Maximum: 7 slides.
 
 - Optional: replace fallback silent demo video with narrated upload.
 - Post tweet from the user account.
-- Submit BNB Hack form.
+- Ask BNB Hack support for the current main-track submission route.
+- Submit once BNB confirms the current route.
 
 Draft assets:
 
@@ -216,4 +221,5 @@ Draft assets:
 - Submission copy: `docs/submission-copy.md`
 - BNB Hack form package: `docs/bnb-hack-form.md`
 - BNB Hack form answer sheet: `docs/bnb-hack-form-answers.md`
+- BNB Hack main form status: `docs/bnb-main-form-status.md`
 - Submission tracker: `docs/submission-tracker.md`

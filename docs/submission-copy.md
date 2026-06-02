@@ -95,8 +95,10 @@ Demo: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/ris
 
 ## Submission form checklist
 
-- Official BNB Hack submit form:
+- Main-track form listed by the official BNB Hack page:
   `https://forms.gle/6jDbA1xrbtxHu2W87`
+- Status: closed to new responses as of 2026-06-02; ask BNB Hack support for
+  the current submission route before final submit.
 - GitHub URL: `https://github.com/dvilelaf/riskguard-adapter`
 - Release URL: `https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0`
 - Demo video URL:

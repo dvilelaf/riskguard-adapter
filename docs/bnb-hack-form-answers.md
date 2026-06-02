@@ -1,9 +1,9 @@
 # BNB Hack form answers
 
-Use this as the copy/paste sheet when filling the official BNB Hack Google Form
-from an authenticated browser session.
+Use this as the copy/paste sheet when BNB confirms the current main-track
+submission route.
 
-Official submit form:
+Main-track form listed by the official page:
 
 https://forms.gle/6jDbA1xrbtxHu2W87
 
@@ -13,6 +13,9 @@ https://docs.google.com/forms/d/e/1FAIpQLSemYQ0DbtqP3fe1sPs4wpUmKcoJos913TKgcgoQ
 
 Note: the form requires Google login before fields are visible from this
 environment, so exact field labels must be matched manually in the browser.
+
+Status as of 2026-06-02: the form is closed to new responses in the browser.
+See `docs/bnb-main-form-status.md`.
 
 ## Identity
 

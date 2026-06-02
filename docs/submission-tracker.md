@@ -8,8 +8,8 @@ Release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
 ## Status summary
 
-Status: **submission package mostly complete; final tweet/form account actions
-remain; BscScan source verification is complete**.
+Status: **submission package complete; BNB main-track form is externally
+blocked because the official Google Form is closed to new responses**.
 
 Completed locally:
 
@@ -42,7 +42,8 @@ Completed locally:
 External remaining:
 
 - post tweet;
-- submit BNB Hack form;
+- ask BNB Hack support for the current main-track submission route;
+- submit once BNB confirms the current route;
 
 Optional polish:
 
@@ -58,7 +59,7 @@ Optional polish:
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
 | 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Fallback complete | Silent fallback video exists. Narrated recording remains recommended. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
-| 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack form | Partially complete | GitHub/release/deck/form text exist. Video, tweet and form submission are external. |
+| 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack route | Blocked externally | Main-track form listed by BNB is closed to new responses. |
 
 ## Open source and CI
 
@@ -78,8 +79,10 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 - GitHub Pages:
   https://dvilelaf.github.io/riskguard-adapter/
-- Official BNB Hack submit form:
+- Main-track form listed by official BNB Hack page:
   https://forms.gle/6jDbA1xrbtxHu2W87
+- Form status page:
+  https://dvilelaf.github.io/riskguard-adapter/bnb-main-form-status.html
 - Deck Markdown:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck-draft.md
 - Deck HTML:
@@ -95,7 +98,7 @@ Optional polish:
 - Tweet:
   external pending after posting
 - BNB Hack submission:
-  external pending after form submit
+  externally blocked until BNB provides a current submission route
 
 ## Verification commands
 
@@ -169,11 +172,18 @@ Source material:
 
 ### BNB Hack form
 
-Reason: requires manual form submission from the user's browser/account.
+Reason: the official BNB page still links this form, but the form is closed to
+new responses in the browser.
 
-Official form:
+Official listed form:
 
 - https://forms.gle/6jDbA1xrbtxHu2W87
+
+Current action:
+
+- ask in the official hackathon support group:
+  https://mee6.xyz/i/f00NIOmDWP
+- use `docs/bnb-main-form-status.md` for the message.
 
 Source material:
 

@@ -1,0 +1,9 @@
+{
+  "agent_id": "strategy-agent-demo",
+  "action": "mock_swap",
+  "chain_id": 97,
+  "value_wei": "0",
+  "slippage_bps": 50,
+  "description": "Demo safe action within policy limits."
+}
+

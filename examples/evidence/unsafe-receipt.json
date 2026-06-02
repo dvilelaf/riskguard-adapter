@@ -1,0 +1,10 @@
+{
+  "agent_id": "strategy-agent-demo",
+  "decision": "block",
+  "evidence_hash": "sha256:5582877c66e824325aa3e8d4895e16f22ce137df04f1f1cda1276c683eec6af8",
+  "policy_hash": "sha256:1e15d7d1874bc88d87c5a6c8896e9947e63a01e267798a83ce69f9c15faa3695",
+  "policy_id": "default-bnb-testnet-demo",
+  "proposal_hash": "sha256:41c3c5ae0588bf22c11fb2f94aed3f6044bb34adc45a181708aa79b712219935",
+  "reason": "slippage 500 bps exceeds max 100 bps",
+  "simulation_hash": "sha256:0c35068a9211e991fd9c18f4e6391df0883467095b0ee70353700ac219fcd47a"
+}

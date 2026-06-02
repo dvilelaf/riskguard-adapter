@@ -1,0 +1,10 @@
+{
+  "policy_id": "default-bnb-testnet-demo",
+  "max_value_wei": "10000000000000000",
+  "allowed_chain_ids": [97],
+  "allowed_actions": ["record_decision", "mock_swap"],
+  "allowed_contracts": [],
+  "max_slippage_bps": 100,
+  "require_evidence": true
+}
+

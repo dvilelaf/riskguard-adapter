@@ -1,0 +1,10 @@
+{
+  "agent_id": "strategy-agent-demo",
+  "decision": "allow",
+  "evidence_hash": "sha256:85bb8312f359bd2ff666bbfc367ae51e1ed0508b758efaca79553ecf86c05d68",
+  "policy_hash": "sha256:1e15d7d1874bc88d87c5a6c8896e9947e63a01e267798a83ce69f9c15faa3695",
+  "policy_id": "default-bnb-testnet-demo",
+  "proposal_hash": "sha256:347dd403e5ddc6abe42e1439493eb20bcec08ee61591fbcee8b71f7a2377ae5a",
+  "reason": "plan satisfies policy",
+  "simulation_hash": "sha256:0c35068a9211e991fd9c18f4e6391df0883467095b0ee70353700ac219fcd47a"
+}

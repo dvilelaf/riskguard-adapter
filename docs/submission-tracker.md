@@ -45,11 +45,11 @@ Completed locally:
 
 External remaining:
 
-- post tweet;
+- post tweet from the user's account if required by the final form;
 - ask BNB Hack support for the current main-track submission route;
 - submit once BNB confirms the current route;
 
-Optional polish:
+Optional external polish:
 
 - replace silent demo video with narrated upload;
 - BscScan source verification completed.
@@ -61,7 +61,7 @@ Optional polish:
 | 1. Submission narrative | `README.md` | Complete | README starts with pitch, demo anchoring links and non-claims. |
 | 2. Evidence package | `examples/evidence/*-receipt.json`, `examples/evidence/*-evidence.json`, `examples/evidence/*-simulation.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
-| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Recording-ready | Silent demo video exists; narrated script now covers hash checker, CLI signature verification and BSC anchoring. |
+| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Complete for repo | Video asset exists; narrated script now covers hash checker, CLI signature verification and BSC anchoring. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack route | Blocked externally | Main-track form listed by BNB is closed to new responses. |
 | 7. Winner-grade review | `docs/winner-grade-review.md`, release assets, public links | Complete | Review closes team findings and records GO-if-route-confirmed status. |
@@ -72,7 +72,7 @@ Optional polish:
 - CI workflow:
   https://github.com/dvilelaf/riskguard-adapter/actions/workflows/ci.yml
 - Latest verified CI run:
-  https://github.com/dvilelaf/riskguard-adapter/actions/runs/26829574473
+  https://github.com/dvilelaf/riskguard-adapter/actions/runs/26834134772
 - Local full CI remains broader than GitHub Actions because it also runs
   Foundry and local Anvil e2e checks.
 
@@ -105,7 +105,7 @@ Optional polish:
 - Demo video:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Tweet:
-  external pending after posting
+  external action after posting
 - BNB Hack submission:
   externally blocked until BNB provides a current submission route
 

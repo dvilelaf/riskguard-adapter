@@ -29,8 +29,8 @@ depth.
 | 0. Submission route | 30 min | Message to BNB support, response tracked | We have a current submit route or a documented external blocker. |
 | 1. Receipt fixture verification | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | Done: CLI verifies signed receipts and hash preimages. |
 | 2. Public hash checker | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Done: browser checks demo receipt hashes, signed payload hash and preimages without local setup. |
-| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | Done: public copy emphasizes product evidence and avoids backstage framing. |
-| 4. Demo media | 2-3 h | Narrated 90-150s video plan, transcript, refreshed release asset/link | Ready: recording plan and transcript show signed verification, BscScan source, receipt count and manifest metadata. |
+| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, draft markers removed | Done: public copy emphasizes product evidence and avoids backstage framing. |
+| 4. Demo media | 2-3 h | Demo video asset, narrated 90-150s video plan, transcript, refreshed release asset/link | Done for repo: release video exists, and recording plan/transcript show signed verification, BscScan source, receipt count and manifest metadata. |
 | 5. Final review and release | 1-2 h | `docs/winner-grade-review.md`, CI/e2e proof, release bundle refresh | Done: team re-review closed accepted findings, release assets and public links are current. |
 
 ## Hito 0: Submission Route
@@ -123,7 +123,7 @@ Changes:
 - keep local workspace paths out of public-facing docs;
 - move internal strategy docs under an internal section or omit them from
   README;
-- remove unresolved placeholders from public-facing docs;
+- remove draft-only markers from public-facing docs;
 - keep public framing as "solo builder, manually verified".
 
 Current status:
@@ -156,9 +156,9 @@ Deliverables:
 
 Status:
 
-- recording pack complete;
-- narrated recording remains a user-side action because it needs voice/screen
-  capture and upload destination choice.
+- repo deliverables complete;
+- narrated replacement recording is an external submission action because it
+  needs voice/screen capture and upload destination choice.
 
 ## Hito 5: Final Review
 
@@ -180,7 +180,7 @@ NO-GO criteria:
 
 - no submission route and no sponsor route;
 - verifier/signature work fails or creates misleading claims;
-- public docs still contain placeholders or internal-only paths.
+- public docs still contain draft-only markers or internal-only paths.
 
 Current status:
 

@@ -23,7 +23,7 @@ once BNB support provides a current route.
 | 1. Receipt fixture verification | Complete | `riskguard sign`, `riskguard verify`, signed receipt fixtures, expected-signer checks and tamper tests. |
 | 2. Public hash checker | Complete | `docs/verifier.html` is live and checks receipt preimages plus signed payload hash. |
 | 3. Human-facing cleanup | Complete | README, landing page, deck and submission copy use product-first wording and remove backstage framing. |
-| 4. Demo media | Ready for narrated recording | `docs/video-recording-plan.md` and `docs/demo-transcript.md` include signed verification, hash checker and BSC anchoring. |
+| 4. Demo media | Complete for repo | Release video asset exists; `docs/video-recording-plan.md` and `docs/demo-transcript.md` include signed verification, hash checker and BSC anchoring for a narrated replacement. |
 | 5. Final review and release | Complete | Team re-review returned zero accepted technical/copy findings; release assets were refreshed. |
 
 ## Public Deliverables
@@ -132,7 +132,7 @@ deterministic verdict receipts, exposes signed demo receipt fixtures, anchors
 receipt component hashes on BSC testnet and carries receipt metadata through a
 manifest-only ERC-8183-compatible payload.
 
-## Remaining Actions
+## External Submission Actions
 
 1. Ask BNB Hack support for the current submission route.
 2. Record or replace the narrated demo video using

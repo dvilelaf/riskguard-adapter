@@ -28,10 +28,10 @@ technical depth.
 |---|---:|---|---|
 | 0. Submission route | 30 min | Message to BNB support, response tracked | We have a current submit route or a documented external blocker. |
 | 1. Receipt fixture verification | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | Done: CLI verifies signed receipts and hash preimages. |
-| 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Done locally: browser verifies demo receipt hashes, signed payload and signature fields without local setup. |
-| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | In progress: public copy now emphasizes product evidence and removes most backstage phrasing. |
-| 4. Demo media | 2-3 h | Narrated 90-120s video, refreshed release asset/link | Video shows signed receipt verification, BscScan source, receipt count and manifest metadata. |
-| 5. Final review and release | 1-2 h | `docs/winner-grade-review.md`, CI/e2e proof, release bundle refresh | Team review gives GO or clear NO-GO; all public links are current. |
+| 2. Public hash checker | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Done: browser checks demo receipt hashes, signed payload hash and preimages without local setup. |
+| 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | Done: public copy emphasizes product evidence and avoids backstage framing. |
+| 4. Demo media | 2-3 h | Narrated 90-150s video plan, transcript, refreshed release asset/link | Ready: recording plan and transcript show signed verification, BscScan source, receipt count and manifest metadata. |
+| 5. Final review and release | 1-2 h | `docs/winner-grade-review.md`, CI/e2e proof, release bundle refresh | Done: team re-review closed accepted findings, release assets and public links are current. |
 
 ## Hito 0: Submission Route
 
@@ -78,7 +78,7 @@ Current status:
 - `just sign-demo` and `just verify-demo` implemented;
 - signed demo receipts generated with a demo-only EVM key.
 
-## Hito 2: Public Verifier
+## Hito 2: Public Hash Checker
 
 Why:
 
@@ -99,7 +99,7 @@ Deliverables:
 - `docs/verifier.html`;
 - `docs/evidence/*` public demo evidence copies;
 - link from `docs/index.html`;
-- README "Try verifier" section.
+- README public artifact link.
 
 Current status:
 
@@ -136,7 +136,8 @@ Current status:
 
 ## Hito 4: Demo Media
 
-Record only after Hitos 1-3.
+Recording is now unblocked. The plan and transcript were refreshed after Hitos
+1-3 so the video shows the current proof surface.
 
 Narrative:
 
@@ -146,6 +147,18 @@ Narrative:
 4. Show BSC testnet contract, verified source and `receiptCount=2`.
 5. Show manifest metadata.
 6. State limits: no production security claim, no mainnet funds.
+
+Deliverables:
+
+- `docs/video-recording-plan.md`;
+- `docs/demo-transcript.md`;
+- existing release video asset until a narrated recording replaces it.
+
+Status:
+
+- recording pack complete;
+- narrated recording remains a user-side action because it needs voice/screen
+  capture and upload destination choice.
 
 ## Hito 5: Final Review
 
@@ -159,8 +172,8 @@ Run a final team review with:
 GO criteria:
 
 - BNB route exists or blocker is documented;
-- public surface no longer screams AI-generated packet;
-- verifier or signed receipts are visible;
+- public surface is product-led and human-readable;
+- hash checker and signed receipt CLI verification are visible;
 - all tests and public links pass.
 
 NO-GO criteria:
@@ -168,3 +181,9 @@ NO-GO criteria:
 - no submission route and no sponsor route;
 - verifier/signature work fails or creates misleading claims;
 - public docs still contain placeholders or internal-only paths.
+
+Current status:
+
+- GO if BNB confirms a current route;
+- externally blocked only by the closed official Google Form;
+- final review recorded in `docs/winner-grade-review.md`.

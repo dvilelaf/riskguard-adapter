@@ -40,6 +40,8 @@ Completed locally:
 - CI and e2e checks passed;
 - team review completed with conditional approval, documented in
   `docs/final-team-review.md`.
+- winner-grade review completed, documented in
+  `docs/winner-grade-review.md`.
 
 External remaining:
 
@@ -59,9 +61,10 @@ Optional polish:
 | 1. Submission narrative | `README.md` | Complete | README starts with pitch, demo anchoring links and non-claims. |
 | 2. Evidence package | `examples/evidence/*-receipt.json`, `examples/evidence/*-evidence.json`, `examples/evidence/*-simulation.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
-| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Complete, upgrade recommended | Silent demo video exists. Narrated recording remains recommended. |
+| 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Recording-ready | Silent demo video exists; narrated script now covers hash checker, CLI signature verification and BSC anchoring. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack route | Blocked externally | Main-track form listed by BNB is closed to new responses. |
+| 7. Winner-grade review | `docs/winner-grade-review.md`, release assets, public links | Complete | Review closes team findings and records GO-if-route-confirmed status. |
 
 ## Open source and CI
 
@@ -95,6 +98,8 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf
 - Deck PDF release asset:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
+- Winner-grade review:
+  https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/winner-grade-review.md
 - Submission bundle:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-submission-bundle.zip
 - Demo video:

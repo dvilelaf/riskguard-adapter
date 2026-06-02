@@ -1,6 +1,6 @@
 # Demo transcript
 
-Use this as a fallback script or caption source for the demo video.
+Use this as the narrated script or caption source for the demo video.
 
 ## Intro
 
@@ -13,8 +13,9 @@ The question it answers is narrow:
 > execution?
 
 It does not custody funds, execute trades, claim production safety or submit a
-real ERC-8183 job. The current proof is local policy evaluation, manifest-only
-ERC-8183 metadata and BSC testnet receipt transactions.
+real ERC-8183 job. The current evidence is local policy evaluation, signed demo
+receipt fixtures, manifest-only ERC-8183 metadata and BSC testnet receipt
+transactions.
 
 ## Show policy
 
@@ -96,6 +97,39 @@ Narration:
 > The evidence bundle contains the checked-in allow and block receipts used in
 > the submission package.
 
+## Signed receipt verification
+
+Open:
+
+```bash
+sed -n '1,220p' examples/evidence/safe-signed-receipt.json
+```
+
+Run:
+
+```bash
+just verify-demo
+```
+
+Expected key output:
+
+```json
+{
+  "checks": {
+    "evidence_hash": "ok",
+    "expected_signer": "ok",
+    "signature": "ok",
+    "simulation_hash": "ok"
+  },
+  "valid": true
+}
+```
+
+Narration:
+
+> The browser checker recomputes the hash preimages. The CLI verifier also
+> recovers the EVM signature and checks it against the expected demo signer.
+
 ## ERC-8183 manifest-only metadata
 
 Run:
@@ -129,7 +163,7 @@ Narration:
 > shows how the RiskGuard receipt hash can travel in
 > `DeliverableManifest.metadata`.
 
-## BSC testnet proof
+## BSC testnet anchoring
 
 Open:
 
@@ -152,7 +186,9 @@ Expected output:
 Narration:
 
 > The BSC testnet registry has two receipt transactions: one allow and one
-> block. The current on-chain receipt count is two.
+> block. The chain stores receipt component hashes; the local bundle carries
+> the preimages and signed demo receipt fixture. The current on-chain receipt
+> count is two.
 
 ## Close
 

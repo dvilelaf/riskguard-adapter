@@ -9,9 +9,11 @@ Tone: direct terminal walkthrough. No cinematic intro, no broad security claims.
 Terminal tabs:
 
 1. repo root;
-2. BscScan contract page;
-3. BscScan allow tx;
-4. BscScan block tx.
+2. GitHub Pages landing page;
+3. receipt hash checker page;
+4. BscScan contract page;
+5. BscScan allow tx;
+6. BscScan block tx.
 
 Files to open during recording:
 
@@ -19,7 +21,9 @@ Files to open during recording:
 - `examples/plans/safe-action.json`;
 - `examples/plans/unsafe-action.json`;
 - `examples/evidence/safe-receipt.json`;
+- `examples/evidence/safe-signed-receipt.json`;
 - `examples/evidence/unsafe-receipt.json`;
+- `examples/evidence/unsafe-signed-receipt.json`;
 - `docs/testnet-results.md`.
 
 Commands to run:
@@ -38,6 +42,8 @@ uv run riskguard manifest \
   --job-id 42 \
   --chain-id 97 \
   --registry-address 0x10932358609f911B5cA1a131298C91a327ACAdC1
+
+just verify-demo
 
 POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just receipt-count
 ```
@@ -84,7 +90,24 @@ Say:
 
 Show `examples/evidence/unsafe-receipt.json`.
 
-### 1:20-1:45: On-chain proof
+### 1:20-1:45: Receipt bundle verification
+
+Open the public receipt hash checker, load the allow sample and show all hash
+checks green.
+
+Run:
+
+```bash
+just verify-demo
+```
+
+Say:
+
+> The browser checker recomputes the receipt hashes and signed payload hash.
+> The CLI goes one step further: it recovers the EVM signature and checks the
+> expected demo signer.
+
+### 1:45-2:10: On-chain anchoring
 
 Show `docs/testnet-results.md` and BscScan links.
 
@@ -97,9 +120,10 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 Say:
 
 > The BSC testnet registry has two receipt transactions: one allow and one
-> block.
+> block. The chain stores receipt component hashes; the local bundle carries
+> the preimages and signed demo receipt fixture.
 
-### 1:45-2:10: ERC-8183 manifest path
+### 2:10-2:30: ERC-8183 manifest path
 
 Run the manifest command.
 
@@ -108,7 +132,7 @@ Say:
 > This is manifest-only. It does not submit a real ERC-8183 job. It shows how a
 > RiskGuard receipt hash can be carried in `DeliverableManifest.metadata`.
 
-### 2:10-2:25: Close
+### 2:30-2:45: Close
 
 > RiskGuard is open source, tested, deployed on BSC testnet and scoped as a
 > small policy-verdict adapter for BNB Chain agent workflows.

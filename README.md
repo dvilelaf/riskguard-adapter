@@ -10,6 +10,8 @@ machine-readable Policy Verdict Receipt.
 The prototype is deployed on BSC testnet and has two successful receipt
 transactions: one `allow` verdict and one `block` verdict.
 
+Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
+
 ## 30-second pitch
 
 BNBAgent and ERC-8004/8183 give agents identity, job rails, escrow and evidence

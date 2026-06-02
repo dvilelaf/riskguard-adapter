@@ -4,6 +4,8 @@ Date: 2026-06-02
 
 Repo: https://github.com/dvilelaf/riskguard-adapter
 
+Release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
+
 ## Status summary
 
 Status: **submission package locally complete; external publishing steps remain**.
@@ -11,6 +13,7 @@ Status: **submission package locally complete; external publishing steps remain*
 Completed locally:
 
 - repo initialized and pushed public;
+- public release created with PDF deck asset;
 - README judge-ready;
 - BSC testnet proof documented;
 - safe/policy-compliant and policy-violating evidence receipts generated;
@@ -48,12 +51,16 @@ External remaining:
 
 - GitHub:
   https://github.com/dvilelaf/riskguard-adapter
+- Release:
+  https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 - Deck Markdown:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck-draft.md
 - Deck HTML:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.html
 - Deck PDF:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf
+- Deck PDF release asset:
+  https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 - Video:
   external pending after recording
 - Tweet:
@@ -88,6 +95,17 @@ Expected:
 - private-key scan returns no matches.
 
 ## External blockers
+
+GitHub issues:
+
+- Demo video:
+  https://github.com/dvilelaf/riskguard-adapter/issues/3
+- Tweet:
+  https://github.com/dvilelaf/riskguard-adapter/issues/2
+- BNB Hack form:
+  https://github.com/dvilelaf/riskguard-adapter/issues/4
+- Optional BscScan verification:
+  https://github.com/dvilelaf/riskguard-adapter/issues/1
 
 ### Demo video
 

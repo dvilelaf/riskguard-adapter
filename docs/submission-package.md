@@ -11,6 +11,8 @@ Name: RiskGuard Adapter
 
 Public repo: https://github.com/dvilelaf/riskguard-adapter
 
+Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
+
 One-liner:
 
 > DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.

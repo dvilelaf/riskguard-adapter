@@ -82,6 +82,8 @@ DeFi policy verdict receipts for BNB Chain agents.
 - open source + tested
 
 GitHub: https://github.com/dvilelaf/riskguard-adapter
+Release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
+Deck: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 Demo: external pending after recording
 
 @BNBChain #BNBHack
@@ -89,9 +91,10 @@ Demo: external pending after recording
 ## Submission form checklist
 
 - GitHub URL: `https://github.com/dvilelaf/riskguard-adapter`
+- Release URL: `https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0`
 - Demo video URL: external pending after recording
 - Deck URL:
-  `https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf`
+  `https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf`
 - Tweet URL: external pending after posting
 - Contract address:
   `0x10932358609f911B5cA1a131298C91a327ACAdC1`

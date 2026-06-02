@@ -1,5 +1,8 @@
 # RiskGuard Adapter
 
+[![CI](https://github.com/dvilelaf/riskguard-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/dvilelaf/riskguard-adapter/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.
 
 RiskGuard Adapter is an open-source policy/evidence adapter for autonomous
@@ -13,6 +16,8 @@ transactions: one `allow` verdict and one `block` verdict.
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
 Submission page: https://dvilelaf.github.io/riskguard-adapter/
+
+License: MIT
 
 Official BNB Hack submit form: https://forms.gle/6jDbA1xrbtxHu2W87
 

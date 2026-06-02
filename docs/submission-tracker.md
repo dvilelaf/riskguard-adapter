@@ -14,6 +14,8 @@ Completed locally:
 
 - repo initialized and pushed public;
 - public release created with PDF deck asset;
+- MIT license added;
+- public GitHub Actions CI workflow added;
 - README judge-ready;
 - BSC testnet proof documented;
 - safe/policy-compliant and policy-violating evidence receipts generated;
@@ -54,6 +56,14 @@ Optional polish:
 | 4. Demo video | `docs/video-recording-plan.md`, `docs/demo-transcript.md`, `scripts/render-demo-video.sh`, release asset `riskguard-demo.mp4` | Fallback complete | Silent fallback video exists. Narrated recording remains recommended. |
 | 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack form | Partially complete | GitHub/release/deck/form text exist. Video, tweet and form submission are external. |
+
+## Open source and CI
+
+- License: MIT.
+- CI workflow:
+  https://github.com/dvilelaf/riskguard-adapter/actions/workflows/ci.yml
+- Local full CI remains broader than GitHub Actions because it also runs
+  Foundry and local Anvil e2e checks.
 
 ## Submission links
 

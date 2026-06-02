@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from riskguard_adapter.agents import run_demo, write_demo_evidence
 from riskguard_adapter.erc8183 import manifest_payload
 from riskguard_adapter.foundry import demo_to_foundry_env
 from riskguard_adapter.policy import evaluate_plan, load_json
+from riskguard_adapter.signatures import sign_receipt, verify_receipt_bundle
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_POLICY = PROJECT_ROOT / "examples" / "policies" / "default-policy.json"
@@ -121,6 +123,48 @@ def main() -> None:
         required=True,
         help="PolicyReceiptRegistry address used as BSC testnet proof.",
     )
+    sign_parser = subparsers.add_parser(
+        "sign",
+        help="Sign a Policy Verdict Receipt with an EVM key from the environment.",
+    )
+    sign_parser.add_argument(
+        "--receipt",
+        required=True,
+        type=Path,
+        help="Path to a RiskGuard receipt JSON file.",
+    )
+    sign_parser.add_argument(
+        "--private-key-env",
+        default="RISKGUARD_SIGNER_PRIVATE_KEY",
+        help="Environment variable containing the EVM private key.",
+    )
+    sign_parser.add_argument(
+        "--out",
+        type=Path,
+        help="Optional path where the signed receipt JSON will be written.",
+    )
+    verify_parser = subparsers.add_parser(
+        "verify",
+        help="Verify receipt preimages and EVM receipt signature.",
+    )
+    verify_parser.add_argument(
+        "--receipt",
+        required=True,
+        type=Path,
+        help="Path to a signed RiskGuard receipt JSON file.",
+    )
+    verify_parser.add_argument(
+        "--evidence",
+        required=True,
+        type=Path,
+        help="Path to the evidence preimage JSON file.",
+    )
+    verify_parser.add_argument(
+        "--simulation",
+        required=True,
+        type=Path,
+        help="Path to the simulation preimage JSON file.",
+    )
     args = parser.parse_args()
 
     if args.version:
@@ -154,6 +198,26 @@ def main() -> None:
             registry_address=args.registry_address,
         )
         print(json.dumps(payload, indent=2, sort_keys=True))
+        return
+
+    if args.command == "sign":
+        private_key = os.environ.get(args.private_key_env)
+        if not private_key:
+            raise SystemExit(f"missing env var: {args.private_key_env}")
+        signed = sign_receipt(load_json(args.receipt), private_key)
+        rendered = json.dumps(signed, indent=2, sort_keys=True) + "\n"
+        if args.out:
+            args.out.write_text(rendered, encoding="utf-8")
+        print(rendered, end="")
+        return
+
+    if args.command == "verify":
+        result = verify_receipt_bundle(
+            load_json(args.receipt),
+            load_json(args.evidence),
+            load_json(args.simulation),
+        )
+        print(json.dumps(result, indent=2, sort_keys=True))
         return
 
     parser.print_help()

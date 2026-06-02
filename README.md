@@ -5,10 +5,11 @@
 
 DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.
 
-RiskGuard Adapter is an open-source policy/evidence adapter for autonomous
-financial agents. A strategy agent proposes a DeFi action, RiskGuard checks it
-against a declared policy before execution, and the result is emitted as a
-machine-readable Policy Verdict Receipt.
+RiskGuard Adapter checks proposed autonomous DeFi actions against declared risk
+policies before execution and emits deterministic allow/block Policy Verdict
+Receipts. The prototype includes a local agent demo, manifest-compatible
+ERC-8183 evidence metadata, EVM-signed demo receipts, a verified BSC testnet
+receipt registry, and two anchored testnet receipt transactions.
 
 The prototype anchors two demo receipts on BSC testnet: one `allow` verdict and
 one `block` verdict.
@@ -19,10 +20,7 @@ Submission page: https://dvilelaf.github.io/riskguard-adapter/
 
 License: MIT
 
-BNB Hack main-track form status:
-https://dvilelaf.github.io/riskguard-adapter/bnb-main-form-status.html
-
-Fallback demo video:
+Demo video:
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 
 ## 30-second pitch
@@ -94,6 +92,7 @@ Full run details: `docs/testnet-results.md`.
   - `simulation_hash`;
   - `evidence_hash`.
 - Persisted evidence and simulation preimages for the demo receipts.
+- EVM-signed demo receipts and local signature verification.
 - Local `StrategyAgent` and `RiskGuardAgent` demo.
 - Manifest-only BNBAgent/ERC-8183 `DeliverableManifest.metadata` payload.
 - Foundry/cast environment output for receipt transactions.
@@ -123,6 +122,8 @@ commands.
 ```bash
 just install
 just demo
+just sign-demo
+just verify-demo
 just foundry-env
 uv run riskguard manifest --receipt examples/evidence/safe-receipt.json --job-id 42 --chain-id 97 --registry-address 0x10932358609f911B5cA1a131298C91a327ACAdC1
 just test
@@ -158,9 +159,11 @@ Expected files:
 safe-receipt.json
 safe-evidence.json
 safe-simulation.json
+safe-signed-receipt.json
 unsafe-receipt.json
 unsafe-evidence.json
 unsafe-simulation.json
+unsafe-signed-receipt.json
 ```
 
 Run the broad local verification suite:
@@ -185,6 +188,16 @@ uv run riskguard manifest \
 This does not submit or settle a real ERC-8183 job. It shows how a RiskGuard
 receipt hash can be carried in `DeliverableManifest.metadata`.
 
+Verify a signed receipt bundle:
+
+```bash
+just sign-demo
+just verify-demo
+```
+
+The demo signature uses a public demo-only EVM key. It proves receipt
+provenance for the local artifact; it is not the funded BSC deployer key.
+
 ## Receipt format
 
 Example shape:
@@ -203,8 +216,9 @@ Example shape:
 ```
 
 The receipt is deterministic: the same policy and proposed action produce the
-same hashes. The current `simulation_hash` is a policy-only placeholder whose
-preimage says `status: not-run`; no external DeFi simulator is claimed.
+same hashes. In this prototype, `simulation_hash` commits to a non-executing
+demo simulation record; no external DeFi simulator or transaction execution is
+claimed.
 
 ## Repository layout
 
@@ -222,6 +236,9 @@ riskguard-adapter/
 
 - `just install`: create/update the `.venv` with dev dependencies.
 - `just demo`: run safe and unsafe local demo flows.
+- `just sign-demo`: sign the demo receipts with a demo-only EVM key.
+- `just verify-demo`: verify signed receipts against evidence and simulation
+  preimages.
 - `just foundry-env`: print contract-ready receipt hash exports.
 - `just test`: run the Python test suite.
 - `just check`: run Ruff lint checks.
@@ -240,48 +257,17 @@ For the submitted BSC testnet registry:
 POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just receipt-count
 ```
 
-## Submission docs
+## Public Artifacts
 
-- Competitive due diligence: `docs/competitive-due-diligence.md`
-- Validation gate: `docs/validation-gate.md`
-- Spike roadmap: `docs/spike-roadmap.md`
-- Submission roadmap and team approval: `docs/submission-roadmap.md`
-- Submission package checklist: `docs/submission-package.md`
-- Submission tracker: `docs/submission-tracker.md`
-- Final team review: `docs/final-team-review.md`
-- Deck draft: `docs/deck-draft.md`
-- HTML deck: `docs/deck.html`
-- PDF deck: `docs/deck.pdf`
-- Fallback demo video render script: `scripts/render-demo-video.sh`
-- Video recording plan: `docs/video-recording-plan.md`
-- Demo transcript: `docs/demo-transcript.md`
-- Submission copy: `docs/submission-copy.md`
-- BNB Hack form package: `docs/bnb-hack-form.md`
-- BNB Hack form answer sheet: `docs/bnb-hack-form-answers.md`
-- BNB Hack main form status: `docs/bnb-main-form-status.md`
-- Integration path: `docs/integration-path.md`
-- Demo script: `docs/demo-script.md`
-- BNB testnet results: `docs/testnet-results.md`
-- BNB testnet runbook: `docs/testnet-runbook.md`
+- Submission page: https://dvilelaf.github.io/riskguard-adapter/
+- Deck: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
+- Demo video: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
+- BSC testnet results: `docs/testnet-results.md`
+- Winner-grade roadmap: `docs/winner-grade-roadmap.md`
 
 ## Roadmap
 
-Before submission:
-
-1. Post the required tweet from the user's account.
-2. Ask BNB Hack support for the current main-track submission route because the
-   official Google Form is currently closed.
-3. Submit through the current route once BNB confirms it.
-
-After submission:
-
-- Tiny static receipt verifier.
-- Real ERC-8183 job submission if it stays lightweight.
+- Static receipt verifier.
+- Real ERC-8183 job submission.
 - opBNB deployment.
 - Policy templates for agentic treasury and DeFAI workflows.
-
-## Compass context
-
-Strategy and grant-planning docs live in:
-
-`/media/david/DATA/repos/compass/docs/pilots/bnb-asi-project-ideas.md`

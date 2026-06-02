@@ -78,6 +78,8 @@ def test_demo_writes_evidence_dir(monkeypatch, capsys, tmp_path) -> None:
     json.loads(capsys.readouterr().out)
     assert (tmp_path / "safe-receipt.json").exists()
     assert (tmp_path / "unsafe-receipt.json").exists()
+    assert (tmp_path / "safe-evidence.json").exists()
+    assert (tmp_path / "unsafe-simulation.json").exists()
 
 
 def test_foundry_env_outputs_export_lines(monkeypatch, capsys) -> None:
@@ -118,3 +120,70 @@ def test_manifest_outputs_erc8183_payload(monkeypatch, capsys) -> None:
         output["manifest"]["metadata"]["riskguard_integration_mode"]
         == "manifest-only"
     )
+
+
+def test_sign_outputs_signed_receipt(monkeypatch, capsys) -> None:
+    monkeypatch.setenv(
+        "RISKGUARD_SIGNER_PRIVATE_KEY",
+        "0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb",
+    )
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "riskguard",
+            "sign",
+            "--receipt",
+            str(ROOT / "examples" / "evidence" / "safe-receipt.json"),
+        ],
+    )
+
+    main()
+
+    output = json.loads(capsys.readouterr().out)
+    assert output["signature"].startswith("0x")
+    assert output["signer"] == "0xDC4814F2BC829880073D2B64355c518Fc7648Cda"
+
+
+def test_verify_outputs_valid_for_signed_receipt_bundle(
+    monkeypatch,
+    capsys,
+    tmp_path,
+) -> None:
+    monkeypatch.setenv(
+        "RISKGUARD_SIGNER_PRIVATE_KEY",
+        "0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb",
+    )
+    signed_receipt = tmp_path / "signed-safe-receipt.json"
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "riskguard",
+            "sign",
+            "--receipt",
+            str(ROOT / "examples" / "evidence" / "safe-receipt.json"),
+            "--out",
+            str(signed_receipt),
+        ],
+    )
+    main()
+    capsys.readouterr()
+
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "riskguard",
+            "verify",
+            "--receipt",
+            str(signed_receipt),
+            "--evidence",
+            str(ROOT / "examples" / "evidence" / "safe-evidence.json"),
+            "--simulation",
+            str(ROOT / "examples" / "evidence" / "safe-simulation.json"),
+        ],
+    )
+
+    main()
+
+    output = json.loads(capsys.readouterr().out)
+    assert output["valid"] is True
+    assert output["checks"]["signature"] == "ok"

@@ -132,12 +132,12 @@
   <body>
     <main>
       <header>
-        <p class="kicker">BNB Hack submission package</p>
+        <p class="kicker">Policy receipts for autonomous DeFi actions</p>
         <h1>RiskGuard Adapter</h1>
         <p class="lead">
-          DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style
-          jobs. Deployed on BSC testnet with two successful receipt
-          transactions.
+          RiskGuard checks proposed autonomous DeFi actions against declared
+          risk policies before execution, signs the resulting verdict receipt,
+          and anchors demo receipt hashes on BSC testnet.
         </p>
       </header>
 
@@ -152,7 +152,7 @@
         </a>
         <a class="card" href="https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4">
           <strong>Demo video</strong>
-          <span>Fallback MP4 release asset.</span>
+          <span>Short demo showing local verdicts, testnet anchoring, and manifest metadata.</span>
         </a>
         <a class="card" href="https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf">
           <strong>Deck PDF</strong>
@@ -166,9 +166,9 @@
           <strong>Submission bundle</strong>
           <span>Single ZIP with core artifacts.</span>
         </a>
-        <a class="card" href="bnb-main-form-status.html">
-          <strong>Form status</strong>
-          <span>Main-track Google Form is currently closed.</span>
+        <a class="card" href="https://testnet.bscscan.com/address/0x10932358609f911B5cA1a131298C91a327ACAdC1#code">
+          <strong>BscScan source</strong>
+          <span>Verified BSC testnet registry source and ABI.</span>
         </a>
       </div>
 
@@ -176,6 +176,7 @@
         <h2>BSC Testnet Proof</h2>
         <ul>
           <li>Contract: <code>0x10932358609f911B5cA1a131298C91a327ACAdC1</code></li>
+          <li>Source verification: <code>verified</code>.</li>
           <li>
             <a href="https://testnet.bscscan.com/tx/0x4d14e3b02ff6bbb66a43340237bbf0aad1ad3413865925554bf7f16bddf5cfd5">
               Allow receipt transaction
@@ -187,6 +188,15 @@
             </a>
           </li>
           <li><code>receiptCount()</code> returns <code>2</code>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Signed Receipt Evidence</h2>
+        <ul>
+          <li>Safe and blocked demo receipts are signed by a demo-only EVM key.</li>
+          <li><code>just verify-demo</code> recomputes evidence and simulation hashes and verifies the signer.</li>
+          <li>Signer: <code>0xDC4814F2BC829880073D2B64355c518Fc7648Cda</code></li>
         </ul>
       </section>
 

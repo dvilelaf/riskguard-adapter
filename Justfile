@@ -20,6 +20,18 @@ demo:
 foundry-env:
     @uv run riskguard foundry-env
 
+# Sign demo receipts with a demo-only EVM key
+sign-demo:
+    RISKGUARD_SIGNER_PRIVATE_KEY="0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb" \
+      uv run riskguard sign --receipt examples/evidence/safe-receipt.json --out examples/evidence/safe-signed-receipt.json
+    RISKGUARD_SIGNER_PRIVATE_KEY="0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb" \
+      uv run riskguard sign --receipt examples/evidence/unsafe-receipt.json --out examples/evidence/unsafe-signed-receipt.json
+
+# Verify demo signed receipts against their preimages
+verify-demo:
+    uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json
+    uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json
+
 # Compile the receipt registry without writing Foundry output into the repo
 forge-build:
     forge build --contracts contracts --out /tmp/riskguard-forge-out --cache-path /tmp/riskguard-forge-cache

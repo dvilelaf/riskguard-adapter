@@ -32,10 +32,13 @@ Completed locally:
 
 External remaining:
 
-- optional: replace fallback silent demo video with narrated upload;
 - post tweet;
 - submit BNB Hack form;
-- optionally verify contract source on BscScan after obtaining API key.
+
+Optional polish:
+
+- replace fallback silent demo video with narrated upload;
+- verify contract source on BscScan after obtaining API key.
 
 ## Milestone tracker
 
@@ -99,7 +102,7 @@ Expected:
 
 GitHub issues:
 
-- Demo video:
+- Optional narrated demo video:
   https://github.com/dvilelaf/riskguard-adapter/issues/3
 - Tweet:
   https://github.com/dvilelaf/riskguard-adapter/issues/2
@@ -108,7 +111,7 @@ GitHub issues:
 - Optional BscScan verification:
   https://github.com/dvilelaf/riskguard-adapter/issues/1
 
-### Narrated demo video
+### Optional narrated demo video
 
 Reason: recommended for stronger judging, but no longer blocks a minimal
 submission because a fallback MP4 release asset exists.

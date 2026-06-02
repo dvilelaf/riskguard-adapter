@@ -90,6 +90,8 @@ Demo: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/ris
 
 ## Submission form checklist
 
+- Official BNB Hack submit form:
+  `https://forms.gle/6jDbA1xrbtxHu2W87`
 - GitHub URL: `https://github.com/dvilelaf/riskguard-adapter`
 - Release URL: `https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0`
 - Demo video URL:

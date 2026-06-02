@@ -14,6 +14,8 @@ Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.
 
 Submission page: https://dvilelaf.github.io/riskguard-adapter/
 
+Official BNB Hack submit form: https://forms.gle/6jDbA1xrbtxHu2W87
+
 Fallback demo video:
 https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 

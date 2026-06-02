@@ -14,6 +14,12 @@ Solo builder using AI assistance.
 
 Main track / AI-agent infrastructure angle.
 
+## Official submit form
+
+https://forms.gle/6jDbA1xrbtxHu2W87
+
+Source: official BNB Hack page `Submit Project` button.
+
 ## Repository
 
 https://github.com/dvilelaf/riskguard-adapter

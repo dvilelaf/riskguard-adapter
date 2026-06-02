@@ -13,6 +13,8 @@ Public repo: https://github.com/dvilelaf/riskguard-adapter
 
 Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 
+Official submit form: https://forms.gle/6jDbA1xrbtxHu2W87
+
 One-liner:
 
 > DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.

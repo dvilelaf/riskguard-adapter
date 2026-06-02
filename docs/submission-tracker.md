@@ -26,8 +26,8 @@ Completed locally:
 - fallback silent demo video render script written;
 - fallback silent demo video uploaded as release asset;
 - submission bundle uploaded as release asset;
-- GitHub Pages enabled for public submission page; current build status must be
-  rechecked before using the URL in the form.
+- GitHub Pages enabled and serving the public submission page.
+- official BNB Hack submit form identified.
 - submission copy written;
 - BNB Hack form package written;
 - CI and e2e checks passed;
@@ -61,8 +61,9 @@ Optional polish:
 - Release:
   https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 - GitHub Pages:
-  https://dvilelaf.github.io/riskguard-adapter/ (currently building; verify
-  before using)
+  https://dvilelaf.github.io/riskguard-adapter/
+- Official BNB Hack submit form:
+  https://forms.gle/6jDbA1xrbtxHu2W87
 - Deck Markdown:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck-draft.md
 - Deck HTML:
@@ -148,7 +149,11 @@ Source material:
 
 ### BNB Hack form
 
-Reason: requires manual form submission and final artifact URLs.
+Reason: requires manual form submission from the user's browser/account.
+
+Official form:
+
+- https://forms.gle/6jDbA1xrbtxHu2W87
 
 Source material:
 

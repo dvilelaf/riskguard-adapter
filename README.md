@@ -239,6 +239,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Demo transcript: `docs/demo-transcript.md`
 - Submission copy: `docs/submission-copy.md`
 - BNB Hack form package: `docs/bnb-hack-form.md`
+- BNB Hack form answer sheet: `docs/bnb-hack-form-answers.md`
 - Integration path: `docs/integration-path.md`
 - Demo script: `docs/demo-script.md`
 - BNB testnet results: `docs/testnet-results.md`
@@ -248,9 +249,8 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 
 Before submission:
 
-1. Polish the judge-facing README, demo evidence and demo video.
-2. Prepare a 7-slide deck and submission copy.
-3. Run final CI and submit to BNB Hack main track.
+1. Post the required tweet from the user's account.
+2. Submit the BNB Hack form from an authenticated browser session.
 
 After submission:
 

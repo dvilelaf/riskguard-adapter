@@ -2,6 +2,8 @@
 
 Use this document when filling the BNB Hack submission form.
 
+Detailed copy/paste answers: `docs/bnb-hack-form-answers.md`
+
 ## Project name
 
 RiskGuard Adapter
@@ -19,6 +21,9 @@ Main track / AI-agent infrastructure angle.
 https://forms.gle/6jDbA1xrbtxHu2W87
 
 Source: official BNB Hack page `Submit Project` button.
+
+Note: the Google Form requires login before fields are visible from this shell
+environment.
 
 ## Repository
 

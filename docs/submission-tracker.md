@@ -28,6 +28,7 @@ Completed locally:
 - submission bundle uploaded as release asset;
 - GitHub Pages enabled and serving the public submission page.
 - official BNB Hack submit form identified.
+- BNB Hack form answer sheet written for browser copy/paste.
 - submission copy written;
 - BNB Hack form package written;
 - CI and e2e checks passed;
@@ -160,6 +161,7 @@ Source material:
 - `docs/submission-copy.md`
 - `docs/submission-package.md`
 - `docs/bnb-hack-form.md`
+- `docs/bnb-hack-form-answers.md`
 
 ### BscScan source verification
 

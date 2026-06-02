@@ -193,4 +193,5 @@ Draft assets:
   https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - Submission copy: `docs/submission-copy.md`
 - BNB Hack form package: `docs/bnb-hack-form.md`
+- BNB Hack form answer sheet: `docs/bnb-hack-form-answers.md`
 - Submission tracker: `docs/submission-tracker.md`

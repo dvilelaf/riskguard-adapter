@@ -224,6 +224,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 - Submission tracker: `docs/submission-tracker.md`
 - Deck draft: `docs/deck-draft.md`
 - HTML deck: `docs/deck.html`
+- PDF deck: `docs/deck.pdf`
 - Video recording plan: `docs/video-recording-plan.md`
 - Submission copy: `docs/submission-copy.md`
 - Integration path: `docs/integration-path.md`

@@ -182,6 +182,7 @@ Draft assets:
 
 - Deck draft: `docs/deck-draft.md`
 - HTML deck: `docs/deck.html`
+- PDF deck: `docs/deck.pdf`
 - Video recording plan: `docs/video-recording-plan.md`
 - Submission copy: `docs/submission-copy.md`
 - Submission tracker: `docs/submission-tracker.md`

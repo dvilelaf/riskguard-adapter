@@ -91,7 +91,7 @@ Demo: external pending after recording
 - GitHub URL: `https://github.com/dvilelaf/riskguard-adapter`
 - Demo video URL: external pending after recording
 - Deck URL:
-  `https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.html`
+  `https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf`
 - Tweet URL: external pending after posting
 - Contract address:
   `0x10932358609f911B5cA1a131298C91a327ACAdC1`

@@ -17,6 +17,7 @@ Completed locally:
 - manifest-only ERC-8183 payload implemented;
 - deck draft written;
 - HTML deck written;
+- PDF deck generated;
 - video recording plan written;
 - submission copy written;
 - CI and e2e checks passed;
@@ -39,7 +40,7 @@ External remaining:
 | 2. Evidence package | `examples/evidence/safe-receipt.json`, `examples/evidence/unsafe-receipt.json`, `docs/testnet-results.md` | Complete | Evidence drift check is clean; BSC `receiptCount()` returns `2`. |
 | 3. ERC-8183 manifest adapter | `src/riskguard_adapter/erc8183.py`, `riskguard manifest`, `tests/test_erc8183.py` | Complete | Manifest tests pass; CLI emits `manifest_hash` and metadata. |
 | 4. Demo video plan | `docs/video-recording-plan.md` | Ready to record | Commands and script are written. Video URL external. |
-| 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/submission-copy.md` | Locally complete | Deck can be opened from repo; submission text ready. |
+| 5. Deck and copy | `docs/deck-draft.md`, `docs/deck.html`, `docs/deck.pdf`, `docs/submission-copy.md` | Locally complete | PDF deck is generated; submission text ready. |
 | 6. Final submit | GitHub URL, video URL, deck URL, tweet URL, BNB Hack form | Partially complete | GitHub URL exists. Video, tweet and form are external. |
 
 ## Submission links
@@ -50,6 +51,8 @@ External remaining:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck-draft.md
 - Deck HTML:
   https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.html
+- Deck PDF:
+  https://github.com/dvilelaf/riskguard-adapter/blob/main/docs/deck.pdf
 - Video:
   external pending after recording
 - Tweet:

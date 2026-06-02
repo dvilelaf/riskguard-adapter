@@ -125,12 +125,12 @@ Target length: 90-150 seconds.
 
 1. Problem: autonomous DeFi agents need risk-policy checks before execution.
 2. Product: RiskGuard emits deterministic allow/block verdict receipts.
-3. Demo: show `default-policy.json`, safe action and allow receipt.
-4. Demo: show unsafe action and block receipt.
+3. Demo: show `default-policy.json`, policy-compliant action and allow receipt.
+4. Demo: show policy-violating action and block receipt.
 5. Proof: show BSC testnet contract, allow tx, block tx and `receiptCount=2`.
 6. Integration: explain BNBAgent/ERC-8183 evidence metadata path.
 7. Close: open-source, tested, deployed on BSC testnet and ready for
-   integrations.
+   lightweight integration experiments.
 
 Avoid saying:
 
@@ -157,7 +157,7 @@ Maximum: 7 slides.
 - GitHub repo is public.
 - README has BSC testnet proof near the top.
 - `docs/testnet-results.md` is current.
-- `examples/evidence/` contains safe and unsafe receipts.
+- `examples/evidence/` contains policy-compliant and policy-violating receipts.
 - Demo video URL is ready.
 - Deck URL is ready.
 - Tweet URL is ready.
@@ -175,3 +175,9 @@ Maximum: 7 slides.
 - Record or upload demo video.
 - Create deck.
 - Publish repo and submit.
+
+Draft assets:
+
+- Deck draft: `docs/deck-draft.md`
+- Video recording plan: `docs/video-recording-plan.md`
+- Submission copy: `docs/submission-copy.md`

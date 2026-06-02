@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from riskguard_adapter import __version__
 from riskguard_adapter.cli import main
 
@@ -179,6 +181,8 @@ def test_verify_outputs_valid_for_signed_receipt_bundle(
             str(ROOT / "examples" / "evidence" / "safe-evidence.json"),
             "--simulation",
             str(ROOT / "examples" / "evidence" / "safe-simulation.json"),
+            "--expected-signer",
+            "0xDC4814F2BC829880073D2B64355c518Fc7648Cda",
         ],
     )
 
@@ -187,3 +191,33 @@ def test_verify_outputs_valid_for_signed_receipt_bundle(
     output = json.loads(capsys.readouterr().out)
     assert output["valid"] is True
     assert output["checks"]["signature"] == "ok"
+    assert output["checks"]["expected_signer"] == "ok"
+
+
+def test_verify_exits_nonzero_for_invalid_signed_receipt_bundle(
+    monkeypatch,
+    capsys,
+) -> None:
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "riskguard",
+            "verify",
+            "--receipt",
+            str(ROOT / "examples" / "evidence" / "safe-signed-receipt.json"),
+            "--evidence",
+            str(ROOT / "examples" / "evidence" / "unsafe-evidence.json"),
+            "--simulation",
+            str(ROOT / "examples" / "evidence" / "safe-simulation.json"),
+            "--expected-signer",
+            "0xDC4814F2BC829880073D2B64355c518Fc7648Cda",
+        ],
+    )
+
+    with pytest.raises(SystemExit) as exc_info:
+        main()
+
+    assert exc_info.value.code == 1
+    output = json.loads(capsys.readouterr().out)
+    assert output["valid"] is False
+    assert output["checks"]["evidence_hash"] == "mismatch"

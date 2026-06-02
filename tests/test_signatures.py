@@ -19,6 +19,9 @@ SAFE_SIMULATION_PATH = ROOT / "examples" / "evidence" / "safe-simulation.json"
 SIGNER_PRIVATE_KEY = (
     "0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb"
 )
+OTHER_PRIVATE_KEY = (
+    "0x5de4111a56c78f382c7f5471bdaa5efb9d14f0b8d3c4f1f13f7116b8a368a365"
+)
 SIGNER_ADDRESS = "0xDC4814F2BC829880073D2B64355c518Fc7648Cda"
 
 
@@ -45,6 +48,22 @@ def test_verify_receipt_bundle_accepts_matching_preimages_and_signature() -> Non
     assert result["checks"]["evidence_hash"] == "ok"
     assert result["checks"]["simulation_hash"] == "ok"
     assert result["checks"]["signature"] == "ok"
+
+
+def test_verify_receipt_bundle_rejects_unexpected_signer() -> None:
+    receipt = sign_receipt(load_json(SAFE_RECEIPT_PATH), OTHER_PRIVATE_KEY)
+    evidence = load_json(SAFE_EVIDENCE_PATH)
+    simulation = load_json(SAFE_SIMULATION_PATH)
+
+    result = verify_receipt_bundle(
+        receipt,
+        evidence,
+        simulation,
+        expected_signer=SIGNER_ADDRESS,
+    )
+
+    assert result["valid"] is False
+    assert result["checks"]["expected_signer"] == "mismatch"
 
 
 def test_verify_receipt_bundle_rejects_tampered_evidence() -> None:

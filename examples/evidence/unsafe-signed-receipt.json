@@ -6,7 +6,7 @@
   "policy_id": "default-bnb-testnet-demo",
   "proposal_hash": "sha256:41c3c5ae0588bf22c11fb2f94aed3f6044bb34adc45a181708aa79b712219935",
   "reason": "slippage 500 bps exceeds max 100 bps",
-  "signature": "0x205d33c993ecfb221fbad347c8bddab18a68bf378b37107adf55ed3595473c5c1546d22cc8c43cafdce7cd27741200ef5e8054af03fa0834f96c5a44a326ed4e1b",
+  "signature": "0x4981b223178275f23e1c1901b9ac25e77c36f448c95ad8b112bc8beb4ed073a313ef40d21e05319ce572783b136b72150fdc1060a801c767a7ff7b3cb4eda76b1c",
   "signed_payload_hash": "0x3a7a9a43650d7e54afaec354f0201e9b08fc587dc2f2e7b9f895d3e7e5c097d1",
   "signer": "0xDC4814F2BC829880073D2B64355c518Fc7648Cda",
   "simulation_hash": "sha256:0c35068a9211e991fd9c18f4e6391df0883467095b0ee70353700ac219fcd47a"

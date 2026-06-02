@@ -18,7 +18,7 @@ Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.
 
 Submission page: https://dvilelaf.github.io/riskguard-adapter/
 
-Receipt verifier: https://dvilelaf.github.io/riskguard-adapter/verifier.html
+Receipt hash checker: https://dvilelaf.github.io/riskguard-adapter/verifier.html
 
 License: MIT
 
@@ -36,13 +36,13 @@ settlement:
 
 RiskGuard does not replace wallets, agents, registries or escrow. It adds a
 small policy-verdict adapter that can be composed with agent jobs, wallet
-workflows or BSC testnet proof contracts today.
+workflows or BSC testnet anchoring contracts today.
 
 ```text
 Agent intent / job
   -> RiskGuard policy check
   -> Policy Verdict Receipt
-  -> planned BNBAgent/ERC-8183 evidence metadata
+  -> ERC-8183 manifest metadata
   -> BSC testnet receipt registry demo anchoring today
 ```
 
@@ -161,11 +161,9 @@ Expected files:
 safe-receipt.json
 safe-evidence.json
 safe-simulation.json
-safe-signed-receipt.json
 unsafe-receipt.json
 unsafe-evidence.json
 unsafe-simulation.json
-unsafe-signed-receipt.json
 ```
 
 Run the broad local verification suite:
@@ -197,8 +195,11 @@ just sign-demo
 just verify-demo
 ```
 
-The demo signature uses a public demo-only EVM key. It proves receipt
-provenance for the local artifact; it is not the funded BSC deployer key.
+`just sign-demo` expects `RISKGUARD_SIGNER_PRIVATE_KEY` in the environment.
+The committed signed receipts are deterministic demo fixtures. `just
+verify-demo` recomputes the evidence and simulation hashes, recovers the EVM
+signature, and checks it against the published demo signer address. This is not
+the funded BSC deployer key and is not a production identity claim.
 
 ## Receipt format
 
@@ -238,7 +239,7 @@ riskguard-adapter/
 
 - `just install`: create/update the `.venv` with dev dependencies.
 - `just demo`: run safe and unsafe local demo flows.
-- `just sign-demo`: sign the demo receipts with a demo-only EVM key.
+- `just sign-demo`: sign the demo receipts with `RISKGUARD_SIGNER_PRIVATE_KEY`.
 - `just verify-demo`: verify signed receipts against evidence and simulation
   preimages.
 - `just foundry-env`: print contract-ready receipt hash exports.
@@ -262,15 +263,14 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 ## Public Artifacts
 
 - Submission page: https://dvilelaf.github.io/riskguard-adapter/
-- Receipt verifier: https://dvilelaf.github.io/riskguard-adapter/verifier.html
+- Receipt hash checker: https://dvilelaf.github.io/riskguard-adapter/verifier.html
 - Deck: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 - Demo video: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - BSC testnet results: `docs/testnet-results.md`
-- Winner-grade roadmap: `docs/winner-grade-roadmap.md`
 
 ## Roadmap
 
-- Static receipt verifier.
+- Static receipt hash checker.
 - Real ERC-8183 job submission.
 - opBNB deployment.
 - Policy templates for agentic treasury and DeFAI workflows.

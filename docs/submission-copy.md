@@ -16,7 +16,8 @@ DeFi policy verdict receipts for BNB Chain agents and ERC-8183-style jobs.
 RiskGuard Adapter checks autonomous DeFi action proposals against declared risk
 policies before execution and emits deterministic allow/block Policy Verdict
 Receipts. The prototype includes a local agent demo, a manifest-only
-BNBAgent/ERC-8183 evidence payload, a BSC testnet receipt registry, and two
+BNBAgent/ERC-8183 evidence payload, signed demo receipt fixtures, a public
+receipt hash checker, a verified BSC testnet receipt registry, and two
 successful BSC testnet receipt transactions.
 
 ## Long description
@@ -42,6 +43,8 @@ testnet receipt registry.
 - `riskguard validate` for single plan evaluation.
 - `riskguard demo` for policy-compliant and policy-violating local agent flows.
 - Persisted receipt, evidence and simulation preimage JSON for both demo flows.
+- Signed demo receipt fixtures with CLI expected-signer verification.
+- Public browser receipt hash checker.
 - `riskguard foundry-env` for contract-ready receipt hash exports.
 - `riskguard manifest` for manifest-only ERC-8183 evidence payloads.
 - Solidity `PolicyReceiptRegistry`.
@@ -49,6 +52,7 @@ testnet receipt registry.
 - One allow receipt transaction.
 - One block receipt transaction.
 - `receiptCount()` returns `2`.
+- BscScan source verification is complete.
 - `just full-ci` passes locally.
 
 ## BSC testnet links
@@ -66,9 +70,9 @@ testnet receipt registry.
 
 RiskGuard Adapter is a small policy-verdict adapter for BNB Chain agent
 workflows. The demo shows a policy-compliant DeFi action receiving an `allow`
-receipt, a policy-violating action receiving a `block` receipt, two BSC testnet receipt
-transactions, and a manifest-only ERC-8183 evidence payload carrying the
-RiskGuard receipt hash.
+receipt, a policy-violating action receiving a `block` receipt, local signed
+receipt verification, two BSC testnet receipt transactions, and a manifest-only
+ERC-8183 evidence payload carrying the RiskGuard receipt hash.
 
 Scope note: the BSC testnet registry is a minimal demo anchoring contract. It
 does not authenticate writers or prove production RiskGuard execution. The
@@ -82,7 +86,8 @@ DeFi policy verdict receipts for BNB Chain agents.
 
 - allow/block policy checks
 - manifest-only ERC-8183 evidence payload
-- BSC testnet deployed
+- signed demo receipts
+- verified BSC testnet source
 - 2 receipt txs
 - open source + tested
 

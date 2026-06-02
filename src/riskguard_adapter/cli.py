@@ -165,6 +165,10 @@ def main() -> None:
         type=Path,
         help="Path to the simulation preimage JSON file.",
     )
+    verify_parser.add_argument(
+        "--expected-signer",
+        help="Optional EVM address expected to have signed the receipt.",
+    )
     args = parser.parse_args()
 
     if args.version:
@@ -216,8 +220,11 @@ def main() -> None:
             load_json(args.receipt),
             load_json(args.evidence),
             load_json(args.simulation),
+            expected_signer=args.expected_signer,
         )
         print(json.dumps(result, indent=2, sort_keys=True))
+        if not result["valid"]:
+            raise SystemExit(1)
         return
 
     parser.print_help()

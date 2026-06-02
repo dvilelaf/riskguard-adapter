@@ -32,7 +32,7 @@ Completed locally:
 - submission bundle uploaded as release asset;
 - GitHub Pages enabled and serving the public submission page.
 - signed receipt verification implemented.
-- public receipt verifier added.
+- public receipt hash checker added.
 - official BNB Hack submit form identified.
 - BNB Hack form answer sheet written.
 - submission copy written;
@@ -81,7 +81,7 @@ Optional polish:
   https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.0
 - GitHub Pages:
   https://dvilelaf.github.io/riskguard-adapter/
-- Receipt verifier:
+- Receipt hash checker:
   https://dvilelaf.github.io/riskguard-adapter/verifier.html
 - Main-track form listed by official BNB Hack page:
   https://forms.gle/6jDbA1xrbtxHu2W87
@@ -119,8 +119,8 @@ diff -u examples/evidence/safe-simulation.json /tmp/riskguard-review-evidence/sa
 diff -u examples/evidence/unsafe-receipt.json /tmp/riskguard-review-evidence/unsafe-receipt.json
 diff -u examples/evidence/unsafe-evidence.json /tmp/riskguard-review-evidence/unsafe-evidence.json
 diff -u examples/evidence/unsafe-simulation.json /tmp/riskguard-review-evidence/unsafe-simulation.json
-uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json
-uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json
+uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json --expected-signer 0xDC4814F2BC829880073D2B64355c518Fc7648Cda
+uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json --expected-signer 0xDC4814F2BC829880073D2B64355c518Fc7648Cda
 POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just receipt-count
 git status --ignored --short .env.bsc-testnet-wallet
 git ls-files --error-unmatch .env.bsc-testnet-wallet && exit 1 || true

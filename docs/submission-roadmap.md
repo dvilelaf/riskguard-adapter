@@ -267,7 +267,7 @@ Done when:
 
 Only start these after submission assets are complete:
 
-- tiny static receipt verifier page;
+- tiny static receipt hash checker page;
 - BscScan testnet contract verification;
 - real ERC-8183 job submission;
 - opBNB deployment;

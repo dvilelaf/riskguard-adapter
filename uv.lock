@@ -1848,6 +1848,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "bnbagent" },
+    { name = "eth-account" },
     { name = "uagents" },
 ]
 
@@ -1860,6 +1861,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "bnbagent", specifier = ">=0.3.4" },
+    { name = "eth-account", specifier = ">=0.13.7" },
     { name = "uagents", specifier = ">=0.25.2" },
 ]
 

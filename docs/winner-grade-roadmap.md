@@ -27,7 +27,7 @@ technical depth.
 | Milestone | Timebox | Deliverables | Done when |
 |---|---:|---|---|
 | 0. Submission route | 30 min | Message to BNB support, response tracked | We have a current submit route or a documented external blocker. |
-| 1. Receipt provenance | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | Done: CLI verifies signed receipts and hash preimages. |
+| 1. Receipt fixture verification | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | Done: CLI verifies signed receipts and hash preimages. |
 | 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Done locally: browser verifies demo receipt hashes, signed payload and signature fields without local setup. |
 | 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | In progress: public copy now emphasizes product evidence and removes most backstage phrasing. |
 | 4. Demo media | 2-3 h | Narrated 90-120s video, refreshed release asset/link | Video shows signed receipt verification, BscScan source, receipt count and manifest metadata. |
@@ -46,13 +46,13 @@ Decision:
 - If BNB does not respond within one working day, keep polishing but also ask
   ASI/BNB support whether the ASI sponsor route is still valid.
 
-## Hito 1: Receipt Provenance
+## Hito 1: Receipt Fixture Verification
 
 Why:
 
 The strongest technical criticism is that the registry records arbitrary hashes.
-Signed receipts do not make it production-ready, but they prove the demo receipt
-was produced by a known EVM signer and not just typed into a contract.
+Signed receipts do not make it production-ready, but they let a reviewer check
+that the committed fixture has stable preimages and a recoverable EVM signature.
 
 Scope:
 
@@ -103,10 +103,11 @@ Deliverables:
 
 Current status:
 
-- static verifier implemented;
+- static hash/preimage checker implemented;
 - allow/block demo bundles load in the browser;
 - browser recomputes evidence hash, simulation hash and signed payload hash;
-- full EVM signature recovery remains available in `riskguard verify`.
+- full EVM signature recovery and expected-signer checking remain available in
+  `riskguard verify`.
 
 ## Hito 3: Human-facing Cleanup
 
@@ -123,8 +124,7 @@ Changes:
 - move internal strategy docs under an internal section or omit them from
   README;
 - remove unresolved placeholders from public-facing docs;
-- keep public framing as "solo builder, manually verified" unless a form
-  explicitly asks about AI assistance.
+- keep public framing as "solo builder, manually verified".
 
 Current status:
 

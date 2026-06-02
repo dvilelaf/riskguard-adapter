@@ -168,11 +168,12 @@
   <body>
     <main>
       <header>
-        <p class="kicker">Receipt verifier</p>
-        <h1>Verify a RiskGuard verdict receipt.</h1>
+        <p class="kicker">Receipt hash checker</p>
+        <h1>Check a RiskGuard verdict receipt bundle.</h1>
         <p class="lead">
-          Recompute the receipt preimage hashes and confirm the signed payload
-          has not been changed.
+          Recompute the receipt preimage hashes and signed payload hash in the
+          browser. Full EVM signature recovery is available in
+          <code>riskguard verify</code>.
         </p>
       </header>
 
@@ -213,8 +214,10 @@
           </a>
         </p>
         <p>
-          The registry stores the demo receipt hashes on BSC testnet. The
-          browser verifier checks the local receipt bundle and signer.
+          The registry stores the demo receipt hashes on BSC testnet. This
+          browser checker validates the local hash preimages; use
+          <code>just verify-demo</code> for CLI EVM signature recovery and
+          expected-signer checking.
         </p>
       </section>
     </main>
@@ -287,7 +290,7 @@
               payloadHash,
             ],
             [
-              "Signature fields",
+              "Signature fields present",
               hasSignatureFields(receipt),
               receipt.signer || "missing signer",
             ],

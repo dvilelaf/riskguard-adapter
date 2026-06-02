@@ -213,7 +213,6 @@ opBNB deployment.
 ## If asked for future roadmap
 
 ```text
-Next steps are a narrated demo video, real ERC-8183 job submission if
-lightweight, opBNB deployment, a tiny receipt verifier, and DeFAI/treasury
-policy templates.
+Next steps are a narrated demo video, real ERC-8183 job submission, opBNB
+deployment, a public receipt hash checker, and DeFAI/treasury policy templates.
 ```

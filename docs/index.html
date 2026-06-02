@@ -116,6 +116,31 @@
       code {
         color: var(--accent-dark);
         font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .cta a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1px solid var(--accent-dark);
+        border-radius: 8px;
+        color: var(--accent-dark);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .cta a:first-child {
+        background: var(--accent-dark);
+        color: #ffffff;
       }
 
       @media (max-width: 760px) {
@@ -136,9 +161,14 @@
         <h1>RiskGuard Adapter</h1>
         <p class="lead">
           RiskGuard checks proposed autonomous DeFi actions against declared
-          risk policies before execution, signs the resulting verdict receipt,
-          and anchors demo receipt hashes on BSC testnet.
+          risk policies before execution, creates local signed demo receipts,
+          and separately anchors demo receipt component hashes on BSC testnet.
         </p>
+        <div class="cta" aria-label="Primary actions">
+          <a href="https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4">Watch demo</a>
+          <a href="verifier.html">Check receipt hashes</a>
+          <a href="https://github.com/dvilelaf/riskguard-adapter">View source</a>
+        </div>
       </header>
 
       <div class="links" aria-label="Submission links">
@@ -155,8 +185,8 @@
           <span>Short demo showing local verdicts, testnet anchoring, and manifest metadata.</span>
         </a>
         <a class="card" href="verifier.html">
-          <strong>Receipt verifier</strong>
-          <span>Browser check for signed receipts, hashes, and preimages.</span>
+          <strong>Receipt hash checker</strong>
+          <span>Browser check for receipt hashes, signed payload hash, and preimages.</span>
         </a>
         <a class="card" href="https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf">
           <strong>Deck PDF</strong>
@@ -177,7 +207,11 @@
       </div>
 
       <section>
-        <h2>BSC Testnet Proof</h2>
+        <h2>BSC Testnet Anchoring</h2>
+        <p>
+          The chain stores receipt component hashes; the local bundle carries
+          the preimages and signed demo receipt fixture.
+        </p>
         <ul>
           <li>Contract: <code>0x10932358609f911B5cA1a131298C91a327ACAdC1</code></li>
           <li>Source verification: <code>verified</code>.</li>
@@ -199,7 +233,7 @@
         <h2>Signed Receipt Evidence</h2>
         <ul>
           <li>Safe and blocked demo receipts are signed by a demo-only EVM key.</li>
-          <li><code>just verify-demo</code> recomputes evidence and simulation hashes and verifies the signer.</li>
+          <li><code>just verify-demo</code> recomputes evidence and simulation hashes, recovers the EVM signature, and checks the expected demo signer.</li>
           <li>Signer: <code>0xDC4814F2BC829880073D2B64355c518Fc7648Cda</code></li>
         </ul>
       </section>

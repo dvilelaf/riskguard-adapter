@@ -6,7 +6,7 @@
   "policy_id": "default-bnb-testnet-demo",
   "proposal_hash": "sha256:347dd403e5ddc6abe42e1439493eb20bcec08ee61591fbcee8b71f7a2377ae5a",
   "reason": "plan satisfies policy",
-  "signature": "0x65a722e1d48e164366fa663ee9e6d34c79b6b1f1500409b794fef4e1f03f3c5d3ceb9064093869eec499051ed5e754e1282f3526c3b14ddf8f8ab6da1299ce201c",
+  "signature": "0x97d18e5599c48bf0f81ae12c4e30fd17e7218d92784595cd9cbe250c02b4be56103b99f6c7b99244f0879dbeb870cf46cd6318bd6ee648837e003e26106175801c",
   "signed_payload_hash": "0x5d2f2b0d1434c8666f6d00f33a3d4969837a6b5eb3f9c486b32cf3753c386a9d",
   "signer": "0xDC4814F2BC829880073D2B64355c518Fc7648Cda",
   "simulation_hash": "sha256:0c35068a9211e991fd9c18f4e6391df0883467095b0ee70353700ac219fcd47a"

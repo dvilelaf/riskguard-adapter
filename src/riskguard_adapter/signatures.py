@@ -32,12 +32,18 @@ def verify_receipt_bundle(
     receipt: JsonObject,
     evidence: JsonObject,
     simulation: JsonObject,
+    expected_signer: str | None = None,
 ) -> JsonObject:
     checks = {
         "evidence_hash": _match_hash(str(receipt.get("evidence_hash")), evidence),
         "simulation_hash": _match_hash(str(receipt.get("simulation_hash")), simulation),
         "signature": _verify_signature(receipt),
     }
+    if expected_signer is not None:
+        checks["expected_signer"] = _match_signer(
+            receipt.get("signer"),
+            expected_signer,
+        )
     return {
         "checks": checks,
         "signer": receipt.get("signer"),
@@ -54,6 +60,12 @@ def receipt_payload_hash(receipt: JsonObject) -> str:
 
 def _match_hash(expected_hash: str, preimage: JsonObject) -> str:
     return "ok" if expected_hash == hash_json(preimage) else "mismatch"
+
+
+def _match_signer(actual: Any, expected: str) -> str:
+    if not isinstance(actual, str):
+        return "missing"
+    return "ok" if actual.lower() == expected.lower() else "mismatch"
 
 
 def _verify_signature(receipt: JsonObject) -> str:
@@ -83,5 +95,5 @@ def _signing_message(payload_hash: str) -> str:
     return (
         "RiskGuard Policy Verdict Receipt\n"
         f"payload_hash={payload_hash}\n"
-        "This signature proves who produced this demo receipt."
+        "This demo signature binds this payload hash to the configured signer."
     )

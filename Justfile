@@ -20,17 +20,16 @@ demo:
 foundry-env:
     @uv run riskguard foundry-env
 
-# Sign demo receipts with a demo-only EVM key
+# Sign demo receipts with an EVM key loaded from RISKGUARD_SIGNER_PRIVATE_KEY
 sign-demo:
-    RISKGUARD_SIGNER_PRIVATE_KEY="0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb" \
-      uv run riskguard sign --receipt examples/evidence/safe-receipt.json --out examples/evidence/safe-signed-receipt.json
-    RISKGUARD_SIGNER_PRIVATE_KEY="0x59c6995e998f97a5a0044966f094538eac1d6085a257075d4c8c5fcadf1bd0eb" \
-      uv run riskguard sign --receipt examples/evidence/unsafe-receipt.json --out examples/evidence/unsafe-signed-receipt.json
+    : "${RISKGUARD_SIGNER_PRIVATE_KEY:?Set RISKGUARD_SIGNER_PRIVATE_KEY}"
+    uv run riskguard sign --receipt examples/evidence/safe-receipt.json --out examples/evidence/safe-signed-receipt.json
+    uv run riskguard sign --receipt examples/evidence/unsafe-receipt.json --out examples/evidence/unsafe-signed-receipt.json
 
 # Verify demo signed receipts against their preimages
 verify-demo:
-    uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json
-    uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json
+    uv run riskguard verify --receipt examples/evidence/safe-signed-receipt.json --evidence examples/evidence/safe-evidence.json --simulation examples/evidence/safe-simulation.json --expected-signer 0xDC4814F2BC829880073D2B64355c518Fc7648Cda
+    uv run riskguard verify --receipt examples/evidence/unsafe-signed-receipt.json --evidence examples/evidence/unsafe-evidence.json --simulation examples/evidence/unsafe-simulation.json --expected-signer 0xDC4814F2BC829880073D2B64355c518Fc7648Cda
 
 # Compile the receipt registry without writing Foundry output into the repo
 forge-build:
@@ -61,7 +60,7 @@ testnet-balance:
     : "${DEPLOYER_ADDRESS:?Set DEPLOYER_ADDRESS}"
     cast balance "$DEPLOYER_ADDRESS" --ether --rpc-url "{{bnb_rpc}}"
 
-# Deploy the receipt registry to BSC testnet
+# Deploy with a disposable BSC testnet key only. Never use funded/mainnet keys.
 deploy-registry:
     : "${DEPLOYER_PRIVATE_KEY:?Set DEPLOYER_PRIVATE_KEY}"
     forge create contracts/PolicyReceiptRegistry.sol:PolicyReceiptRegistry \
@@ -71,7 +70,7 @@ deploy-registry:
       --out /tmp/riskguard-forge-out \
       --cache-path /tmp/riskguard-forge-cache
 
-# Record the safe allow receipt on BSC testnet
+# Record the safe allow receipt with a disposable BSC testnet key only
 record-allow:
     : "${DEPLOYER_PRIVATE_KEY:?Set DEPLOYER_PRIVATE_KEY}"
     : "${POLICY_RECEIPT_REGISTRY_ADDRESS:?Set POLICY_RECEIPT_REGISTRY_ADDRESS}"
@@ -84,7 +83,7 @@ record-allow:
       --private-key "$DEPLOYER_PRIVATE_KEY" \
       --legacy
 
-# Record the unsafe block receipt on BSC testnet
+# Record the unsafe block receipt with a disposable BSC testnet key only
 record-block:
     : "${DEPLOYER_PRIVATE_KEY:?Set DEPLOYER_PRIVATE_KEY}"
     : "${POLICY_RECEIPT_REGISTRY_ADDRESS:?Set POLICY_RECEIPT_REGISTRY_ADDRESS}"

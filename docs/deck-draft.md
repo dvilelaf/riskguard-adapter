@@ -130,12 +130,15 @@ Speaker note:
 
 ## Slide 7: Roadmap
 
-Next:
+Done:
 
 - public demo video;
 - BscScan source verified;
+- public receipt hash checker;
+
+Next:
+
 - real ERC-8183 job submission;
-- public receipt verifier;
 - opBNB deployment;
 - policy templates for DeFAI and treasury workflows.
 

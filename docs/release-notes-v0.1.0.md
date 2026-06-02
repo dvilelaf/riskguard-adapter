@@ -12,6 +12,9 @@ First hackathon submission package for RiskGuard Adapter.
 - BSC testnet deployment.
 - Two successful BSC testnet receipt transactions.
 - Evidence bundle.
+- EVM-signed demo receipt fixtures.
+- CLI receipt bundle verification with expected-signer checking.
+- Public browser receipt hash checker.
 - Submission README, deck, video plan, transcript and copy.
 
 ## BSC testnet proof
@@ -31,10 +34,11 @@ First hackathon submission package for RiskGuard Adapter.
 Last local verification before release:
 
 - `just full-ci`: passed.
-- Python tests: 21 passed.
+- Python tests: 31 passed.
 - Solidity tests: 2 passed.
 - Local Anvil e2e: `local_e2e_receipt_count=2`.
 - Evidence drift check: clean.
+- Signed receipt verification: safe and blocked fixtures valid.
 - BSC testnet `receiptCount()`: `2`.
 - Private key scan: no public-file leak found.
 

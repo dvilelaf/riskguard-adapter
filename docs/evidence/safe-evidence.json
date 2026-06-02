@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "action": "mock_swap",
+    "chain_id": 97,
+    "slippage_bps": 50,
+    "target_contract": null,
+    "token": null,
+    "value_wei": "0"
+  },
+  "decision": "allow",
+  "reason": "plan satisfies policy"
+}

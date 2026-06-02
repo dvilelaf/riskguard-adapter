@@ -28,7 +28,7 @@ technical depth.
 |---|---:|---|---|
 | 0. Submission route | 30 min | Message to BNB support, response tracked | We have a current submit route or a documented external blocker. |
 | 1. Receipt provenance | 4-6 h | EVM-signed receipts, `riskguard sign`, `riskguard verify`, tests, regenerated evidence | In progress: a judge can see who signed the local receipt and verify that hashes/preimages match. |
-| 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | Browser verifies safe/block demo receipts without local setup. |
+| 2. Public verifier | 4-6 h | `docs/verifier.html`, public Pages link, README/link updates | In progress: browser verifies demo receipt hashes, signed payload and signature fields without local setup. |
 | 3. Human-facing cleanup | 2-3 h | Product-first README/landing, internal docs de-emphasized, placeholders removed | Public repo feels builder-led, not like an LLM operations dump. |
 | 4. Demo media | 2-3 h | Narrated 90-120s video, refreshed release asset/link | Video shows signed receipt verification, BscScan source, receipt count and manifest metadata. |
 | 5. Final review and release | 1-2 h | `docs/winner-grade-review.md`, CI/e2e proof, release bundle refresh | Team review gives GO or clear NO-GO; all public links are current. |
@@ -97,8 +97,16 @@ Scope:
 Deliverables:
 
 - `docs/verifier.html`;
+- `docs/evidence/*` public demo evidence copies;
 - link from `docs/index.html`;
 - README "Try verifier" section.
+
+Current status:
+
+- static verifier implemented;
+- allow/block demo bundles load in the browser;
+- browser recomputes evidence hash, simulation hash and signed payload hash;
+- full EVM signature recovery remains available in `riskguard verify`.
 
 ## Hito 3: Human-facing Cleanup
 

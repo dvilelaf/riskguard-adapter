@@ -18,6 +18,8 @@ Public release: https://github.com/dvilelaf/riskguard-adapter/releases/tag/v0.1.
 
 Submission page: https://dvilelaf.github.io/riskguard-adapter/
 
+Receipt verifier: https://dvilelaf.github.io/riskguard-adapter/verifier.html
+
 License: MIT
 
 Demo video:
@@ -260,6 +262,7 @@ POLICY_RECEIPT_REGISTRY_ADDRESS=0x10932358609f911B5cA1a131298C91a327ACAdC1 just 
 ## Public Artifacts
 
 - Submission page: https://dvilelaf.github.io/riskguard-adapter/
+- Receipt verifier: https://dvilelaf.github.io/riskguard-adapter/verifier.html
 - Deck: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/deck.pdf
 - Demo video: https://github.com/dvilelaf/riskguard-adapter/releases/download/v0.1.0/riskguard-demo.mp4
 - BSC testnet results: `docs/testnet-results.md`

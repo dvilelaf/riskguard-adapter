@@ -62,6 +62,8 @@ Optional polish:
 - License: MIT.
 - CI workflow:
   https://github.com/dvilelaf/riskguard-adapter/actions/workflows/ci.yml
+- Latest verified CI run:
+  https://github.com/dvilelaf/riskguard-adapter/actions/runs/26829574473
 - Local full CI remains broader than GitHub Actions because it also runs
   Foundry and local Anvil e2e checks.
 

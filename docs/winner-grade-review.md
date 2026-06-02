@@ -2,7 +2,10 @@
 
 Date: 2026-06-02
 
-Commit reviewed: `ef6fec1`
+Implementation reviewed through: `ef6fec1`
+
+Later commits may update this document or release packaging without changing
+the reviewed implementation surface.
 
 ## Decision
 
